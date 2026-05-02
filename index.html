@@ -192,6 +192,46 @@ words:[
 {id:'a03',sentence:'昨日の映画は面白かったです。',chinese:'昨天的電影很有趣。',quizType:'adjconj',quizQ:'面白い(有趣) → 過去式？',quizAnswer:'面白かった',distractors:['面白いた','面白くない'],hint:'👕 い→かった = 過去',blocks:['昨日の映画は','面白かった','です'],formula:'面白い → 面白かった(過去)'},
 {id:'a04',sentence:'今日は寒くないです。',chinese:'今天不冷。',quizType:'adjconj',quizQ:'寒い(冷) → 否定？',quizAnswer:'寒くない',distractors:['寒いない','寒かった'],hint:'👕 い→くない = 否定',blocks:['今日は','寒くない','です'],formula:'寒い → 寒くない(否定)'},
 {id:'a05',sentence:'あの店は高かったです。',chinese:'那家店很貴。（過去）',quizType:'adjconj',quizQ:'高い(貴) → 過去式？',quizAnswer:'高かった',distractors:['高いた','高くない'],hint:'👕 い→かった = 過去',blocks:['あの店は','高かった','です'],formula:'高い → 高かった(過去)'}
+]},
+{id:'r_to',emoji:'💬',name:'轉述標籤 と',formula:'想/說的內容 + と + 言う/思う',
+comic:{panels:[{emoji:'💭',text:'心裡想的事',color:'#d4c8e8',border:'#a088c8'},{emoji:'📦',text:'用 と 打包起來',color:'#c8d4e8',border:'#88a0c8'},{emoji:'💬',text:'交給「言う/思う」',color:'#e8d4c8',border:'#c8a088'},{emoji:'✅',text:'と = 引用打包器',color:'#c8e8d4',border:'#88c8a0'}],formula:'💬 [內容] + と + 言う/思う'},
+blindspot:{cn:'中文「說：…」用冒號引號',jp:'日文把內容用 と 打包，不需要引號'},
+words:[
+{id:'to01',sentence:'明日は雨だと思います。',chinese:'我覺得明天會下雨。',quizType:'quote',quizQ:'「明天下雨」這個想法用什麼打包？',quizSlot:'明日は雨だ[?]思います',quizAnswer:'と',distractors:['が','を'],hint:'💬 想法用 と 打包',blocks:['明日は雨だ','と','思います'],formula:'[明日は雨だ]+[と]+[思います]'},
+{id:'to02',sentence:'先生は「静かに」と言いました。',chinese:'老師說了「安靜」。',quizType:'quote',quizQ:'老師說的話用什麼打包？',quizSlot:'「静かに」[?]言いました',quizAnswer:'と',distractors:['が','を'],hint:'💬 說的話用 と 打包',blocks:['先生は','「静かに」と','言いました'],formula:'[先生は]+[「静かに」と]+[言いました]'},
+{id:'to03',sentence:'友達は来ないと言いました。',chinese:'朋友說不來。',quizType:'quote',quizQ:'「不來」這句話用什麼打包？',quizSlot:'来ない[?]言いました',quizAnswer:'と',distractors:['が','を'],hint:'💬 轉述內容用 と',blocks:['友達は','来ないと','言いました'],formula:'[友達は]+[来ないと]+[言いました]'},
+{id:'to04',sentence:'日本語は難しいと思います。',chinese:'我覺得日語很難。',quizType:'quote',quizQ:'「日語很難」這個想法用什麼連接？',quizSlot:'難しい[?]思います',quizAnswer:'と',distractors:['が','に'],hint:'💬 感想用 と 打包',blocks:['日本語は','難しいと','思います'],formula:'[日本語は]+[難しいと]+[思います]'},
+{id:'to05',sentence:'母は「早く寝なさい」と言いました。',chinese:'媽媽說「快去睡」。',quizType:'quote',quizQ:'媽媽說的命令用什麼打包？',quizSlot:'「早く寝なさい」[?]言いました',quizAnswer:'と',distractors:['を','が'],hint:'💬 命令也用 と 打包',blocks:['母は','「早く寝なさい」と','言いました'],formula:'[母は]+[「早く寝なさい」と]+[言いました]'}
+]},
+{id:'r_mod',emoji:'🖇️',name:'膠水修飾 連体',formula:'動詞直接黏名詞，不需要「的」',
+comic:{panels:[{emoji:'🏃',text:'走る（跑）',color:'#d4e8d4',border:'#88c888'},{emoji:'🖇️',text:'直接黏上名詞！',color:'#e8e8c8',border:'#c8c888'},{emoji:'👤',text:'走る人（跑的人）',color:'#e8c8d4',border:'#c888a0'},{emoji:'✅',text:'不需要加「的」！',color:'#c8d4e8',border:'#88a0c8'}],formula:'🖇️ 動詞(原形/た形) + 名詞 = 修飾'},
+blindspot:{cn:'中文「跑的人」需要加「的」',jp:'日文「走る人」動詞直接黏名詞'},
+words:[
+{id:'md01',sentence:'走る人',chinese:'跑步的人',quizType:'modifier',quizQ:'「跑步的人」日文怎麼排？',quizAnswer:'走る人',distractors:['人走る','走るの人'],hint:'🖇️ 動詞直接黏在名詞前面',blocks:['走る','人'],formula:'[走る]+[人]'},
+{id:'md02',sentence:'昨日買った本',chinese:'昨天買的書',quizType:'modifier',quizQ:'「昨天買的書」日文怎麼排？',quizAnswer:'昨日買った本',distractors:['本昨日買った','昨日買ったの本'],hint:'🖇️ た形也能直接修飾',blocks:['昨日','買った','本'],formula:'[昨日買った]+[本]'},
+{id:'md03',sentence:'友達が作った料理',chinese:'朋友做的菜',quizType:'modifier',quizQ:'「朋友做的菜」日文怎麼排？',quizAnswer:'友達が作った料理',distractors:['料理友達が作った','友達が作ったの料理'],hint:'🖇️ 修飾語放在名詞前面',blocks:['友達が','作った','料理'],formula:'[友達が作った]+[料理]'},
+{id:'md04',sentence:'日本語を教える先生',chinese:'教日語的老師',quizType:'modifier',quizQ:'「教日語的老師」日文怎麼排？',quizAnswer:'日本語を教える先生',distractors:['先生日本語を教える','教えるの先生'],hint:'🖇️ 原形動詞直接修飾名詞',blocks:['日本語を','教える','先生'],formula:'[日本語を教える]+[先生]'},
+{id:'md05',sentence:'母が焼いたケーキ',chinese:'媽媽烤的蛋糕',quizType:'modifier',quizQ:'「媽媽烤的蛋糕」日文怎麼排？',quizAnswer:'母が焼いたケーキ',distractors:['ケーキ母が焼いた','母が焼いたのケーキ'],hint:'🖇️ た形+名詞，不加「的」',blocks:['母が','焼いた','ケーキ'],formula:'[母が焼いた]+[ケーキ]'}
+]},
+{id:'r_deshou',emoji:'🤔',name:'推測 でしょう',formula:'大概是…吧 → でしょう',
+comic:{panels:[{emoji:'🌧️',text:'看天空好暗',color:'#c8d4e8',border:'#88a0c8'},{emoji:'🤔',text:'大概…吧？',color:'#d4c8e8',border:'#a088c8'},{emoji:'☔',text:'雨が降るでしょう',color:'#e8d4c8',border:'#c8a088'},{emoji:'✅',text:'でしょう = 我猜',color:'#c8e8d4',border:'#88c8a0'}],formula:'🤔 [普通形] + でしょう = 大概…吧'},
+blindspot:{cn:'中文「大概」「可能」「應該」都一樣',jp:'日文 でしょう 是說話者的推測語氣'},
+words:[
+{id:'ds01',sentence:'明日は雨が降るでしょう。',chinese:'明天大概會下雨吧。',quizType:'guess',quizQ:'「明天大概下雨」→ 句尾加什麼表示推測？',quizAnswer:'でしょう',distractors:['ました','ません'],hint:'🤔 推測=でしょう',blocks:['明日は','雨が','降る','でしょう'],formula:'[明日は]+[雨が]+[降る]+[でしょう]'},
+{id:'ds02',sentence:'彼は来ないでしょう。',chinese:'他大概不會來吧。',quizType:'guess',quizQ:'「他大概不來」→ 句尾加什麼？',quizAnswer:'でしょう',distractors:['ます','です'],hint:'🤔 否定推測也用でしょう',blocks:['彼は','来ない','でしょう'],formula:'[彼は]+[来ない]+[でしょう]'},
+{id:'ds03',sentence:'この料理はおいしいでしょう。',chinese:'這道菜大概很好吃吧。',quizType:'guess',quizQ:'「大概很好吃」→ 句尾加什麼？',quizAnswer:'でしょう',distractors:['ました','ません'],hint:'🤔 形容詞推測=でしょう',blocks:['この料理は','おいしい','でしょう'],formula:'[この料理は]+[おいしい]+[でしょう]'},
+{id:'ds04',sentence:'試験は難しかったでしょう。',chinese:'考試大概很難吧。（過去推測）',quizType:'guess',quizQ:'「考試大概很難」（過去）→ 句尾？',quizAnswer:'でしょう',distractors:['ます','です'],hint:'🤔 過去推測=かった+でしょう',blocks:['試験は','難しかった','でしょう'],formula:'[試験は]+[難しかった]+[でしょう]'},
+{id:'ds05',sentence:'あの映画は面白いでしょう。',chinese:'那部電影大概很有趣吧。',quizType:'guess',quizQ:'「大概很有趣」→ 句尾？',quizAnswer:'でしょう',distractors:['ました','ません'],hint:'🤔 推測語氣=でしょう',blocks:['あの映画は','面白い','でしょう'],formula:'[あの映画は]+[面白い]+[でしょう]'}
+]},
+{id:'r_tara',emoji:'🌀',name:'條件 〜たら',formula:'如果 A 發生了，就 B → たら',
+comic:{panels:[{emoji:'🌧️',text:'如果下雨了…',color:'#c8d4e8',border:'#88a0c8'},{emoji:'🌀',text:'動詞た形 + ら',color:'#d4c8e8',border:'#a088c8'},{emoji:'🏠',text:'就不去了',color:'#e8c8d4',border:'#c888a0'},{emoji:'✅',text:'たら = 如果…就',color:'#c8e8d4',border:'#88c8a0'}],formula:'🌀 [動詞た形+ら], [結果] = 如果…就'},
+blindspot:{cn:'中文「如果」放句首就好',jp:'日文要把動詞變成「た形+ら」'},
+words:[
+{id:'tr01',sentence:'雨が降ったら、行きません。',chinese:'如果下雨就不去。',quizType:'condition',quizQ:'「如果下雨」→ 降る 怎麼變？',quizAnswer:'降ったら',distractors:['降るたら','降りたら'],hint:'🌀 降る→降った→降ったら',blocks:['雨が','降ったら','行きません'],formula:'[雨が降ったら]+[行きません]'},
+{id:'tr02',sentence:'安かったら、買います。',chinese:'如果便宜就買。',quizType:'condition',quizQ:'「如果便宜」→ 安い 怎麼變？',quizAnswer:'安かったら',distractors:['安いたら','安くたら'],hint:'🌀 安い→安かった→安かったら',blocks:['安かったら','買います'],formula:'[安かったら]+[買います]'},
+{id:'tr03',sentence:'時間があったら、遊びに来てください。',chinese:'如果有時間請來玩。',quizType:'condition',quizQ:'「如果有時間」→ ある 怎麼變？',quizAnswer:'あったら',distractors:['あるたら','ありたら'],hint:'🌀 ある→あった→あったら',blocks:['時間が','あったら','遊びに来てください'],formula:'[時間があったら]+[遊びに来てください]'},
+{id:'tr04',sentence:'日本に行ったら、寿司を食べたいです。',chinese:'如果去日本，想吃壽司。',quizType:'condition',quizQ:'「如果去日本」→ 行く 怎麼變？',quizAnswer:'行ったら',distractors:['行くたら','行きたら'],hint:'🌀 行く→行った→行ったら',blocks:['日本に','行ったら','寿司を食べたいです'],formula:'[日本に行ったら]+[寿司を食べたいです]'},
+{id:'tr05',sentence:'暇だったら、映画を見ましょう。',chinese:'如果有空就看電影吧。',quizType:'condition',quizQ:'「如果有空」→ 暇(な形容詞) 怎麼變？',quizAnswer:'暇だったら',distractors:['暇なたら','暇のたら'],hint:'🌀 な形容詞：暇→暇だった→暇だったら',blocks:['暇だったら','映画を見ましょう'],formula:'[暇だったら]+[映画を見ましょう]'}
 ]}
 ];
 
@@ -270,6 +310,30 @@ function renderContent(){
       h+='<div style="text-align:center;font-size:0.85rem;font-weight:700;margin:8px 0;">'+w.quizQ+'</div>';
       h+='<div style="text-align:center;font-size:0.8rem;color:var(--dim);">'+w.chinese+'</div>';
       h+='<div style="text-align:center;font-size:0.72rem;color:var(--gold);margin:8px 0;">🧪 い形容詞怎麼變？</div>';
+      h+='<div class="quiz-row">'+opts.map(o=>{let cl='quiz-opt';if(ans){if(o===w.quizAnswer)cl+=' correct';else if(o===ans)cl+=' wrong';}return '<button class="'+cl+'" onclick="handleQuiz(\''+w.id+'\',\''+o+'\',\''+w.quizAnswer+'\')"'+(ans?' disabled':'')+'>'+o+' '+S(o)+'</button>';}).join('')+'</div>';
+    }else if(w.quizType==='quote'){
+      const opts=shuffle([w.quizAnswer,...w.distractors]);
+      h+='<div style="text-align:center;font-size:1rem;font-weight:700;margin:8px 0;">'+w.quizSlot.replace('[?]',' <span style="color:var(--gold);font-size:1.2rem;">❓</span> ')+'</div>';
+      h+='<div style="text-align:center;font-size:0.8rem;color:var(--dim);">'+w.chinese+'</div>';
+      h+='<div style="text-align:center;font-size:0.72rem;color:var(--gold);margin:8px 0;">🧪 引用內容用什麼打包？</div>';
+      h+='<div class="quiz-row">'+opts.map(o=>{let cl='quiz-opt';if(ans){if(o===w.quizAnswer)cl+=' correct';else if(o===ans)cl+=' wrong';}return '<button class="'+cl+'" onclick="handleQuiz(\''+w.id+'\',\''+o+'\',\''+w.quizAnswer+'\')"'+(ans?' disabled':'')+'>'+o+' '+S(o)+'</button>';}).join('')+'</div>';
+    }else if(w.quizType==='modifier'){
+      const opts=shuffle([w.quizAnswer,...w.distractors]);
+      h+='<div style="text-align:center;font-size:0.85rem;font-weight:700;margin:8px 0;">'+w.quizQ+'</div>';
+      h+='<div style="text-align:center;font-size:0.8rem;color:var(--dim);">'+w.chinese+'</div>';
+      h+='<div style="text-align:center;font-size:0.72rem;color:var(--gold);margin:8px 0;">🧪 正確的日文語序是？</div>';
+      h+='<div class="quiz-row">'+opts.map(o=>{let cl='quiz-opt';if(ans){if(o===w.quizAnswer)cl+=' correct';else if(o===ans)cl+=' wrong';}return '<button class="'+cl+'" onclick="handleQuiz(\''+w.id+'\',\''+o+'\',\''+w.quizAnswer+'\')"'+(ans?' disabled':'')+'>'+o+' '+S(o)+'</button>';}).join('')+'</div>';
+    }else if(w.quizType==='guess'){
+      const opts=shuffle([w.quizAnswer,...w.distractors]);
+      h+='<div style="text-align:center;font-size:0.85rem;font-weight:700;margin:8px 0;">'+w.quizQ+'</div>';
+      h+='<div style="text-align:center;font-size:0.8rem;color:var(--dim);">'+w.chinese+'</div>';
+      h+='<div style="text-align:center;font-size:0.72rem;color:var(--gold);margin:8px 0;">🧪 表示推測的語氣？</div>';
+      h+='<div class="quiz-row">'+opts.map(o=>{let cl='quiz-opt';if(ans){if(o===w.quizAnswer)cl+=' correct';else if(o===ans)cl+=' wrong';}return '<button class="'+cl+'" onclick="handleQuiz(\''+w.id+'\',\''+o+'\',\''+w.quizAnswer+'\')"'+(ans?' disabled':'')+'>'+o+' '+S(o)+'</button>';}).join('')+'</div>';
+    }else if(w.quizType==='condition'){
+      const opts=shuffle([w.quizAnswer,...w.distractors]);
+      h+='<div style="text-align:center;font-size:0.85rem;font-weight:700;margin:8px 0;">'+w.quizQ+'</div>';
+      h+='<div style="text-align:center;font-size:0.8rem;color:var(--dim);">'+w.chinese+'</div>';
+      h+='<div style="text-align:center;font-size:0.72rem;color:var(--gold);margin:8px 0;">🧪 條件形「如果…」怎麼變？</div>';
       h+='<div class="quiz-row">'+opts.map(o=>{let cl='quiz-opt';if(ans){if(o===w.quizAnswer)cl+=' correct';else if(o===ans)cl+=' wrong';}return '<button class="'+cl+'" onclick="handleQuiz(\''+w.id+'\',\''+o+'\',\''+w.quizAnswer+'\')"'+(ans?' disabled':'')+'>'+o+' '+S(o)+'</button>';}).join('')+'</div>';
     }
     if(ans){
