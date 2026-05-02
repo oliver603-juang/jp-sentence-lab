@@ -1,0 +1,15 @@
+{
+  "name": "日文句型積木 N5→N1",
+  "short_name": "日文積木",
+  "description": "54 rules × 270 sentences — JLPT N5 to N1",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#1a0a1e",
+  "theme_color": "#1a0a1e",
+  "icons": [
+    { "src": "icon-jp-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable" },
+    { "src": "icon-jp-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any maskable" },
+    { "src": "icon-jp-128.png", "sizes": "128x128", "type": "image/png", "purpose": "any maskable" }
+  ]
+}
