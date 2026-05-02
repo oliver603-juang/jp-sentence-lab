@@ -142,6 +142,56 @@ words:[
 {id:'k03',sentence:'大丈夫ですか？',chinese:'你沒事嗎？',quizType:'kanji',quizQ:'日文「大丈夫」是什麼意思？',quizAnswer:'沒問題/沒事',distractors:['大男人/丈夫','很厲害'],hint:'大丈夫(だいじょうぶ)=沒事',blocks:['大丈夫','ですか'],formula:'大丈夫 ≠ 大丈夫(中文)'},
 {id:'k04',sentence:'あの人は丈夫です。',chinese:'那個人很健壯。',quizType:'kanji',quizQ:'日文「丈夫」是什麼意思？',quizAnswer:'健壯/結實',distractors:['老公/丈夫','大人'],hint:'丈夫(じょうぶ)=結實',blocks:['あの人は','丈夫','です'],formula:'丈夫 ≠ 老公'},
 {id:'k05',sentence:'娘は元気です。',chinese:'女兒很有精神。',quizType:'kanji',quizQ:'日文「娘」是什麼意思？',quizAnswer:'女兒',distractors:['姑娘/少女','媳婦'],hint:'娘(むすめ)=女兒',blocks:['娘は','元気','です'],formula:'娘 ≠ 娘(中文的姑娘)'}
+]},
+{id:'r_de',emoji:'🛠️',name:'工具箱 で',formula:'用什麼做/在哪裡做 → で',
+comic:{panels:[{emoji:'🚌',text:'坐公車去（工具）',color:'#d4e8d4',border:'#88c888'},{emoji:'🛠️',text:'用 で 標記工具！',color:'#c8d4e8',border:'#88a0c8'},{emoji:'🍴',text:'用筷子吃（手段）',color:'#e8d4c8',border:'#c8a088'},{emoji:'✅',text:'で = 用什麼/在哪裡',color:'#c8e8d4',border:'#88c8a0'}],formula:'🛠️ で = 工具/手段/場所'},
+blindspot:{cn:'中文「用」「在」「搭」各不同',jp:'日文全部用 で 一個助詞搞定'},
+words:[
+{id:'d01',sentence:'バスで学校に行きます。',chinese:'搭公車去學校。',quizType:'particle',quizSlot:'バス[?]学校に行きます',quizAnswer:'で',distractors:['に','を'],hint:'🚌 交通工具用 で',blocks:['バスで','学校に','行きます'],formula:'[バスで]+[学校に]+[行きます]'},
+{id:'d02',sentence:'箸でご飯を食べます。',chinese:'用筷子吃飯。',quizType:'particle',quizSlot:'箸[?]ご飯を食べます',quizAnswer:'で',distractors:['に','を'],hint:'🥢 工具用 で',blocks:['箸で','ご飯を','食べます'],formula:'[箸で]+[ご飯を]+[食べます]'},
+{id:'d03',sentence:'公園で遊びます。',chinese:'在公園玩。',quizType:'particle',quizSlot:'公園[?]遊びます',quizAnswer:'で',distractors:['に','は'],hint:'📍 動作場所用 で',blocks:['公園で','遊びます'],formula:'[公園で]+[遊びます]'},
+{id:'d04',sentence:'日本語で話します。',chinese:'用日語說話。',quizType:'particle',quizSlot:'日本語[?]話します',quizAnswer:'で',distractors:['を','に'],hint:'🗣️ 語言手段用 で',blocks:['日本語で','話します'],formula:'[日本語で]+[話します]'},
+{id:'d05',sentence:'はさみで紙を切ります。',chinese:'用剪刀剪紙。',quizType:'particle',quizSlot:'はさみ[?]紙を切ります',quizAnswer:'で',distractors:['に','が'],hint:'✂️ 工具用 で',blocks:['はさみで','紙を','切ります'],formula:'[はさみで]+[紙を]+[切ります]'}
+]},
+{id:'r_ka',emoji:'❓',name:'尾巴問號 か',formula:'句尾加 か → 變問句，語序不變！',
+comic:{panels:[{emoji:'🍽️',text:'食べます（吃）',color:'#d4c8e8',border:'#a088c8'},{emoji:'❓',text:'尾巴加上 か',color:'#e8e8c8',border:'#c8c888'},{emoji:'🤔',text:'食べますか？（吃嗎？）',color:'#e8c8d4',border:'#c888a0'},{emoji:'✅',text:'語序完全不變！',color:'#c8e8d4',border:'#88c8a0'}],formula:'❓ 陳述句 + か = 問句（不用倒裝！）'},
+blindspot:{cn:'中文問句要加「嗎」或倒裝',jp:'日文只要句尾加 か，語序完全不變'},
+words:[
+{id:'q01',sentence:'これは本ですか。',chinese:'這是書嗎？',quizType:'sentend',quizQ:'これは本です → 變成問句',quizAnswer:'か',distractors:['よ','ね'],hint:'❓ 問句句尾加 か',blocks:['これは','本','ですか'],formula:'[これは]+[本]+[ですか]'},
+{id:'q02',sentence:'明日、学校に行きますか。',chinese:'明天去學校嗎？',quizType:'sentend',quizQ:'明日、学校に行きます → 變成問句',quizAnswer:'か',distractors:['よ','の'],hint:'❓ 問句句尾加 か',blocks:['明日','学校に','行きますか'],formula:'[明日]+[学校に]+[行きますか]'},
+{id:'q03',sentence:'猫が好きですか。',chinese:'喜歡貓嗎？',quizType:'sentend',quizQ:'猫が好きです → 變成問句',quizAnswer:'か',distractors:['ね','よ'],hint:'❓ 問句句尾加 か',blocks:['猫が','好き','ですか'],formula:'[猫が]+[好き]+[ですか]'},
+{id:'q04',sentence:'お名前は何ですか。',chinese:'你叫什麼名字？',quizType:'sentend',quizQ:'お名前は何です → 變成問句',quizAnswer:'か',distractors:['の','よ'],hint:'❓ 問句句尾加 か',blocks:['お名前は','何','ですか'],formula:'[お名前は]+[何]+[ですか]'},
+{id:'q05',sentence:'日本語がわかりますか。',chinese:'懂日語嗎？',quizType:'sentend',quizQ:'日本語がわかります → 變成問句',quizAnswer:'か',distractors:['ね','よ'],hint:'❓ 問句句尾加 か',blocks:['日本語が','わかり','ますか'],formula:'[日本語が]+[わかり]+[ますか]'}
+]},
+{id:'r_morau',emoji:'📥',name:'接收包裹 もらう',formula:'我從某人那裡得到 → もらう',
+comic:{panels:[{emoji:'📦',text:'朋友有東西',color:'#c8d4e8',border:'#88a0c8'},{emoji:'📥',text:'我伸手接過來',color:'#d4e8d4',border:'#88c888'},{emoji:'🎉',text:'もらう＝我收到了！',color:'#e8d4c8',border:'#c8a088'},{emoji:'✅',text:'主角是「收的人」',color:'#c8e8d4',border:'#88c8a0'}],formula:'📥 我+は [對方+に] もらう = 我從對方收到'},
+blindspot:{cn:'中文「收到」不強調方向',jp:'日文 もらう 主角是收的人，方向從外往內'},
+words:[
+{id:'m01',sentence:'私は友達にチョコをもらいました。',chinese:'我從朋友那收到巧克力。',quizType:'direction',direction:'receive',dirFrom:'友達(朋友)',dirTo:'私(我)',dirAnswer:'もらう',distractors:['あげる','くれる'],blocks:['私は','友達に','チョコを','もらいました'],formula:'[私は]+[友達に]+[チョコを]+[もらいました]'},
+{id:'m02',sentence:'私は先生に本をもらいました。',chinese:'我從老師那收到書。',quizType:'direction',direction:'receive',dirFrom:'先生(老師)',dirTo:'私(我)',dirAnswer:'もらう',distractors:['あげる','くれる'],blocks:['私は','先生に','本を','もらいました'],formula:'[私は]+[先生に]+[本を]+[もらいました]'},
+{id:'m03',sentence:'弟は友達にゲームをもらいました。',chinese:'弟弟從朋友那收到遊戲。',quizType:'direction',direction:'receive',dirFrom:'友達(朋友)',dirTo:'弟(弟弟)',dirAnswer:'もらう',distractors:['あげる','くれる'],blocks:['弟は','友達に','ゲームを','もらいました'],formula:'[弟は]+[友達に]+[ゲームを]+[もらいました]'},
+{id:'m04',sentence:'妹は母にお菓子をもらいました。',chinese:'妹妹從媽媽那收到糖果。',quizType:'direction',direction:'receive',dirFrom:'母(媽媽)',dirTo:'妹(妹妹)',dirAnswer:'もらう',distractors:['あげる','くれる'],blocks:['妹は','母に','お菓子を','もらいました'],formula:'[妹は]+[母に]+[お菓子を]+[もらいました]'},
+{id:'m05',sentence:'私は姉にかばんをもらいました。',chinese:'我從姊姊那收到包包。',quizType:'direction',direction:'receive',dirFrom:'姉(姊姊)',dirTo:'私(我)',dirAnswer:'もらう',distractors:['あげる','くれる'],blocks:['私は','姉に','かばんを','もらいました'],formula:'[私は]+[姉に]+[かばんを]+[もらいました]'}
+]},
+{id:'r_haga',emoji:'🔦',name:'聚光燈 は vs が',formula:'は=舞台背景 が=聚光燈主角',
+comic:{panels:[{emoji:'🎭',text:'は：設定舞台背景',color:'#d4c8e8',border:'#a088c8'},{emoji:'🔦',text:'が：聚光燈打在主角',color:'#e8e8c8',border:'#c8c888'},{emoji:'🌸',text:'桜は綺麗です(櫻花嘛…)',color:'#e8c8d4',border:'#c888a0'},{emoji:'✅',text:'桜が綺麗です(就是櫻花！)',color:'#c8e8d4',border:'#88c8a0'}],formula:'🎭は=說到…的話 🔦が=就是它！'},
+blindspot:{cn:'中文「是」一個字，不分背景/強調',jp:'日文 は=舊資訊(背景) が=新資訊(焦點)'},
+words:[
+{id:'h01',sentence:'私は学生です。',chinese:'我是學生。（自我介紹背景）',quizType:'haga',quizQ:'自我介紹「我是學生」→ 這是背景資訊還是新發現？',quizAnswer:'は（背景）',distractors:['が（焦點）'],hint:'🎭 自我介紹=設定背景→は',blocks:['私は','学生','です'],formula:'[私は]+[学生]+[です]'},
+{id:'h02',sentence:'誰が来ましたか。',chinese:'誰來了？（聚光燈找人）',quizType:'haga',quizQ:'「誰來了？」→ 要找的人是背景還是焦點？',quizAnswer:'が（焦點）',distractors:['は（背景）'],hint:'🔦 疑問詞=要找的焦點→が',blocks:['誰が','来ましたか'],formula:'[誰が]+[来ましたか]'},
+{id:'h03',sentence:'田中さんが来ました。',chinese:'田中來了！（新資訊）',quizType:'haga',quizQ:'「田中來了！」→ 田中是已知背景還是新發現？',quizAnswer:'が（焦點）',distractors:['は（背景）'],hint:'🔦 回答「誰？」=新資訊→が',blocks:['田中さんが','来ました'],formula:'[田中さんが]+[来ました]'},
+{id:'h04',sentence:'東京は大きいです。',chinese:'東京很大。（眾所皆知）',quizType:'haga',quizQ:'「東京很大」→ 東京是新資訊還是大家都知道的？',quizAnswer:'は（背景）',distractors:['が（焦點）'],hint:'🎭 眾所皆知=背景→は',blocks:['東京は','大きい','です'],formula:'[東京は]+[大きい]+[です]'},
+{id:'h05',sentence:'あ、雨が降っています！',chinese:'啊，在下雨！（突然發現）',quizType:'haga',quizQ:'「啊，下雨了！」→ 雨是背景介紹還是突然發現？',quizAnswer:'が（焦點）',distractors:['は（背景）'],hint:'🔦 突然發現=新資訊→が',blocks:['雨が','降って','います'],formula:'[雨が]+[降って]+[います]'}
+]},
+{id:'r_adj',emoji:'👕',name:'形容詞變身',formula:'い形容詞自己會變時態！',
+comic:{panels:[{emoji:'🌸',text:'美しい（現在美）',color:'#e8c8d4',border:'#c888a0'},{emoji:'👕',text:'脫掉 い 換衣服',color:'#c8d4e8',border:'#88a0c8'},{emoji:'⏰',text:'美しかった（以前美）',color:'#d4e8d4',border:'#88c888'},{emoji:'✅',text:'形容詞自己穿時態！',color:'#e8e8c8',border:'#c8c888'}],formula:'👕 い→かった(過去) い→くない(否定)'},
+blindspot:{cn:'中文形容詞不會變形（很美→以前很美）',jp:'日文 い形容詞自己變時態（美しい→美しかった）'},
+words:[
+{id:'a01',sentence:'昨日は暑かったです。',chinese:'昨天很熱。',quizType:'adjconj',quizQ:'暑い(熱) → 過去式？',quizAnswer:'暑かった',distractors:['暑いた','暑くない'],hint:'👕 い→かった = 過去',blocks:['昨日は','暑かった','です'],formula:'暑い → 暑かった(過去)'},
+{id:'a02',sentence:'この本は面白くないです。',chinese:'這本書不有趣。',quizType:'adjconj',quizQ:'面白い(有趣) → 否定？',quizAnswer:'面白くない',distractors:['面白いない','面白かった'],hint:'👕 い→くない = 否定',blocks:['この本は','面白くない','です'],formula:'面白い → 面白くない(否定)'},
+{id:'a03',sentence:'昨日の映画は面白かったです。',chinese:'昨天的電影很有趣。',quizType:'adjconj',quizQ:'面白い(有趣) → 過去式？',quizAnswer:'面白かった',distractors:['面白いた','面白くない'],hint:'👕 い→かった = 過去',blocks:['昨日の映画は','面白かった','です'],formula:'面白い → 面白かった(過去)'},
+{id:'a04',sentence:'今日は寒くないです。',chinese:'今天不冷。',quizType:'adjconj',quizQ:'寒い(冷) → 否定？',quizAnswer:'寒くない',distractors:['寒いない','寒かった'],hint:'👕 い→くない = 否定',blocks:['今日は','寒くない','です'],formula:'寒い → 寒くない(否定)'},
+{id:'a05',sentence:'あの店は高かったです。',chinese:'那家店很貴。（過去）',quizType:'adjconj',quizQ:'高い(貴) → 過去式？',quizAnswer:'高かった',distractors:['高いた','高くない'],hint:'👕 い→かった = 過去',blocks:['あの店は','高かった','です'],formula:'高い → 高かった(過去)'}
 ]}
 ];
 
@@ -203,6 +253,24 @@ function renderContent(){
       h+='<div style="text-align:center;font-size:0.85rem;font-weight:700;margin:8px 0;">'+w.quizQ+'</div>';
       h+='<div style="text-align:center;font-size:0.72rem;color:var(--gold);margin:8px 0;">🧪 選出正確的日文意思</div>';
       h+='<div class="quiz-row">'+opts.map(o=>{let cl='quiz-opt';if(ans){if(o===w.quizAnswer)cl+=' correct';else if(o===ans)cl+=' wrong';}return '<button class="'+cl+'" onclick="handleQuiz(\''+w.id+'\',\''+o+'\',\''+w.quizAnswer+'\')"'+(ans?' disabled':'')+'>'+o+'</button>';}).join('')+'</div>';
+    }else if(w.quizType==='sentend'){
+      const opts=shuffle([w.quizAnswer,...w.distractors]);
+      h+='<div style="text-align:center;font-size:1rem;font-weight:700;margin:8px 0;">'+w.quizQ+'</div>';
+      h+='<div style="text-align:center;font-size:0.8rem;color:var(--dim);">'+w.chinese+'</div>';
+      h+='<div style="text-align:center;font-size:0.72rem;color:var(--gold);margin:8px 0;">🧪 句尾要加什麼？</div>';
+      h+='<div class="quiz-row">'+opts.map(o=>{let cl='quiz-opt';if(ans){if(o===w.quizAnswer)cl+=' correct';else if(o===ans)cl+=' wrong';}return '<button class="'+cl+'" onclick="handleQuiz(\''+w.id+'\',\''+o+'\',\''+w.quizAnswer+'\')"'+(ans?' disabled':'')+'>'+o+' '+S(o)+'</button>';}).join('')+'</div>';
+    }else if(w.quizType==='haga'){
+      const opts=shuffle([w.quizAnswer,...w.distractors]);
+      h+='<div style="text-align:center;font-size:0.85rem;font-weight:700;margin:8px 0;">'+w.quizQ+'</div>';
+      h+='<div style="text-align:center;font-size:0.8rem;color:var(--dim);">'+w.chinese+'</div>';
+      h+='<div style="text-align:center;font-size:0.72rem;color:var(--gold);margin:8px 0;">🧪 是 🎭は(背景) 還是 🔦が(焦點)？</div>';
+      h+='<div class="quiz-row">'+opts.map(o=>{let cl='quiz-opt';if(ans){if(o===w.quizAnswer)cl+=' correct';else if(o===ans)cl+=' wrong';}return '<button class="'+cl+'" onclick="handleQuiz(\''+w.id+'\',\''+o+'\',\''+w.quizAnswer+'\')"'+(ans?' disabled':'')+'>'+o+'</button>';}).join('')+'</div>';
+    }else if(w.quizType==='adjconj'){
+      const opts=shuffle([w.quizAnswer,...w.distractors]);
+      h+='<div style="text-align:center;font-size:0.85rem;font-weight:700;margin:8px 0;">'+w.quizQ+'</div>';
+      h+='<div style="text-align:center;font-size:0.8rem;color:var(--dim);">'+w.chinese+'</div>';
+      h+='<div style="text-align:center;font-size:0.72rem;color:var(--gold);margin:8px 0;">🧪 い形容詞怎麼變？</div>';
+      h+='<div class="quiz-row">'+opts.map(o=>{let cl='quiz-opt';if(ans){if(o===w.quizAnswer)cl+=' correct';else if(o===ans)cl+=' wrong';}return '<button class="'+cl+'" onclick="handleQuiz(\''+w.id+'\',\''+o+'\',\''+w.quizAnswer+'\')"'+(ans?' disabled':'')+'>'+o+' '+S(o)+'</button>';}).join('')+'</div>';
     }
     if(ans){
       const isC=ans===correct;
