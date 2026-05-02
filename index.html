@@ -7,86 +7,61 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="apple-mobile-web-app-title" content="日文積木">
 <meta name="theme-color" content="#1a0a1e">
+<link rel="manifest" href="manifest.json">
+<link rel="apple-touch-icon" href="icon-jp-192.png">
 <title>日文句型積木</title>
 <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Zen+Maru+Gothic:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
-:root {
-  --bg:#1a0a1e;--card:#241432;--border:#3a2450;
-  --gold:#f5c842;--accent:#e05070;--teal:#26a69a;
-  --blue:#5ca0e8;--green:#4caf50;--red:#ef5350;
-  --purple:#9c6ade;--orange:#f5a623;--pink:#ec407a;
-  --text:#ece4f0;--dim:#8a7a9a;--muted:#5a4a6a;
-}
+:root{--bg:#1a0a1e;--card:#241432;--border:#3a2450;--gold:#f5c842;--accent:#e05070;--teal:#26a69a;--blue:#5ca0e8;--green:#4caf50;--red:#ef5350;--purple:#9c6ade;--orange:#f5a623;--pink:#ec407a;--text:#ece4f0;--dim:#8a7a9a;--muted:#5a4a6a;}
 *{box-sizing:border-box;margin:0;padding:0;}
 body{font-family:'Zen Maru Gothic','Fredoka',sans-serif;background:var(--bg);color:var(--text);min-height:100dvh;overflow-x:hidden;user-select:text;-webkit-user-select:text;}
-
 .top-bar{display:flex;align-items:center;gap:8px;padding:8px 12px;position:sticky;top:0;background:var(--bg);z-index:100;border-bottom:1px solid var(--border);}
 .user-btn{padding:5px 14px;border-radius:20px;border:1.5px solid var(--border);background:transparent;color:var(--dim);font-family:inherit;font-size:0.7rem;font-weight:600;cursor:pointer;transition:all 0.2s;}
 .user-btn.active{background:var(--gold);color:#1a1a2e;border-color:var(--gold);font-weight:700;}
 .score-badge{margin-left:auto;padding:5px 14px;border-radius:14px;background:var(--green);color:white;font-size:0.72rem;font-weight:700;}
-
-.rule-tabs{display:flex;gap:6px;padding:6px 12px;overflow-x:auto;-webkit-overflow-scrolling:touch;}
-.rule-tabs::-webkit-scrollbar{display:none;}
+.rule-tabs{display:flex;gap:6px;padding:6px 12px;overflow-x:auto;-webkit-overflow-scrolling:touch;}.rule-tabs::-webkit-scrollbar{display:none;}
 .rule-tab{flex-shrink:0;padding:6px 14px;border-radius:20px;border:1px solid var(--border);background:transparent;color:var(--dim);font-family:inherit;font-size:0.68rem;font-weight:600;cursor:pointer;white-space:nowrap;transition:all 0.2s;}
 .rule-tab.active{background:var(--gold);color:#1a1a2e;border-color:var(--gold);transform:scale(1.05);}
-.rule-tab.coming{opacity:0.4;cursor:default;}
-
 .content{padding:10px 12px 80px;}
 .rule-card{background:var(--card);border-radius:16px;border:1px solid var(--border);padding:14px;margin-bottom:10px;}
 .rule-header{display:flex;align-items:center;gap:10px;margin-bottom:10px;}
-.rule-emoji{font-size:1.6rem;}
-.rule-name{font-size:0.95rem;font-weight:700;}
+.rule-emoji{font-size:1.6rem;}.rule-name{font-size:0.95rem;font-weight:700;}
 .rule-formula-tag{font-size:0.68rem;color:var(--gold);background:rgba(245,200,66,0.1);padding:3px 10px;border-radius:8px;display:inline-block;margin-top:3px;}
-
 .comic-grid{display:grid;grid-template-columns:1fr 1fr;gap:4px;margin:10px 0;}
 .comic-panel{border-radius:10px;padding:10px 8px;text-align:center;position:relative;min-height:68px;display:flex;flex-direction:column;align-items:center;justify-content:center;}
 .panel-num{position:absolute;top:4px;left:7px;font-size:0.5rem;font-weight:700;opacity:0.4;}
 .panel-emoji{font-size:1.4rem;margin-bottom:3px;}
 .panel-text{font-size:0.68rem;font-weight:600;line-height:1.3;color:rgba(0,0,0,0.7);}
 .comic-formula-text{text-align:center;font-size:0.68rem;font-weight:700;color:var(--dim);padding:4px 0;}
-
 .blindspot-box{background:rgba(255,255,255,0.02);border-radius:10px;padding:10px;margin-top:8px;}
 .bs-label{font-size:0.62rem;color:var(--gold);font-weight:600;margin-bottom:4px;}
 .bs-grid{display:grid;grid-template-columns:1fr 1fr;gap:6px;}
 .bs-cn,.bs-jp{font-size:0.65rem;line-height:1.4;padding:6px;border-radius:8px;}
-.bs-cn{background:rgba(224,80,112,0.08);}
-.bs-jp{background:rgba(92,160,232,0.08);}
+.bs-cn{background:rgba(224,80,112,0.08);}.bs-jp{background:rgba(92,160,232,0.08);}
 .bs-cn b,.bs-jp b{font-size:0.58rem;display:block;margin-bottom:2px;}
-
 .section-label{font-size:0.75rem;font-weight:700;color:var(--dim);margin:14px 0 6px;padding-left:8px;border-left:3px solid var(--gold);}
-
 .word-grid{display:flex;flex-wrap:wrap;gap:6px;margin-top:6px;}
 .word-chip{padding:6px 12px;border-radius:12px;background:var(--card);border:1.5px solid var(--border);font-family:inherit;font-size:0.72rem;font-weight:600;cursor:pointer;transition:all 0.2s;color:var(--text);}
 .word-chip:hover{transform:scale(1.04);border-color:var(--muted);}
 .word-chip.active{border-color:var(--gold);background:rgba(245,200,66,0.08);box-shadow:0 0 10px rgba(245,200,66,0.15);}
-.chip-cn{font-size:0.58rem;color:var(--dim);margin-left:4px;}
-
 .detail-card{background:rgba(245,200,66,0.04);border:1px solid rgba(245,200,66,0.12);border-radius:14px;padding:14px;margin-top:10px;animation:slideUp 0.25s ease;}
 @keyframes slideUp{from{opacity:0;transform:translateY(10px);}to{opacity:1;transform:none;}}
-
 .speak-btn{background:none;border:1px solid var(--gold);border-radius:50%;width:30px;height:30px;font-size:1rem;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;}
 .speak-btn:active{transform:scale(0.88);}
-
-.block-row{display:flex;align-items:center;justify-content:center;gap:8px;margin:14px 0;flex-wrap:wrap;}
-.blk{padding:8px 14px;border-radius:10px;font-size:0.9rem;font-weight:700;color:white;}
-.blk-base{background:var(--blue);}
-.blk-op{font-size:1.1rem;color:var(--gold);background:none;padding:0;}
-.blk-particle{background:var(--purple);}
-.blk-verb{background:var(--accent);}
-.blk-result{background:var(--green);}
-
+.s{cursor:pointer;font-size:0.7rem;margin-left:2px;}
+.block-row{display:flex;align-items:center;justify-content:center;gap:6px;margin:12px 0;flex-wrap:wrap;}
+.blk{padding:6px 12px;border-radius:10px;font-size:0.82rem;font-weight:700;color:white;}
+.blk-n{background:var(--blue);}.blk-p{background:var(--purple);}.blk-v{background:var(--accent);}.blk-op{font-size:1rem;color:var(--gold);background:none;padding:0;}.blk-r{background:var(--green);}
 .quiz-row{display:flex;gap:6px;justify-content:center;margin-top:10px;flex-wrap:wrap;}
-.quiz-opt{padding:8px 18px;border-radius:12px;border:1.5px solid var(--border);background:var(--card);color:var(--text);font-family:inherit;font-size:0.78rem;font-weight:600;cursor:pointer;transition:all 0.15s;}
+.quiz-opt{padding:8px 16px;border-radius:12px;border:1.5px solid var(--border);background:var(--card);color:var(--text);font-family:inherit;font-size:0.78rem;font-weight:600;cursor:pointer;transition:all 0.15s;}
 .quiz-opt:hover{border-color:var(--muted);}
 .quiz-opt.correct{border-color:var(--green);background:rgba(76,175,80,0.15);color:var(--green);}
 .quiz-opt.wrong{border-color:var(--red);background:rgba(239,83,80,0.1);color:var(--red);}
-
 .direction-viz{display:flex;align-items:center;justify-content:center;gap:12px;margin:10px 0;font-size:1rem;font-weight:700;}
 .dir-person{padding:8px 14px;border-radius:10px;font-size:0.8rem;font-weight:700;}
 .dir-from{background:rgba(92,160,232,0.15);color:var(--blue);}
 .dir-to{background:rgba(224,80,112,0.15);color:var(--accent);}
 .dir-arrow{font-size:1.4rem;color:var(--gold);}
-
 .progress-row{display:flex;align-items:center;gap:4px;padding:6px 12px;flex-wrap:wrap;}
 .pill{width:28px;height:28px;border-radius:50%;border:1.5px solid var(--border);background:transparent;font-size:0.55rem;font-weight:700;color:var(--dim);display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all 0.15s;flex-shrink:0;}
 .pill.done{border-color:var(--green);color:var(--green);background:rgba(76,175,80,0.1);}
@@ -95,336 +70,157 @@ body{font-family:'Zen Maru Gothic','Fredoka',sans-serif;background:var(--bg);col
 </style>
 </head>
 <body>
-
 <div class="top-bar">
   <button class="user-btn active" id="btn-iggy" onclick="switchUser('iggy')">🦊 Iggy</button>
   <button class="user-btn" id="btn-yoyo" onclick="switchUser('yoyo')">🐸 Yoyo</button>
   <div class="score-badge" id="score-badge">0 分</div>
 </div>
-
 <div class="rule-tabs" id="rule-tabs"></div>
 <div class="content" id="content"></div>
 <div class="progress-row" id="progress-row"></div>
-
 <script>
-// ═══════════════════════════════════════
-// DATA: 6 Rules (Rule 2 fully implemented, others placeholder)
-// ═══════════════════════════════════════
-const RULES = [
-  {
-    id:'r_particle', emoji:'🏷️', name:'助詞導航 は/が/を/に',
-    suffixDisplay:'🏷️ 助詞', coming:true, formula:'[名詞+助詞] + [動詞]',
-    words:[]
-  },
-  {
-    id:'r_giving', emoji:'🎁', name:'禮物流向 あげる/くれる',
-    suffixDisplay:'🎁 授受', coming:false,
-    formula:'[人+に] + [物+を] + あげる/くれる',
-    comic:{
-      title:'🎁 禮物流向',
-      panels:[
-        {emoji:'🎁',text:'我要送書給朋友',color:'#d4c8e8',border:'#a088c8'},
-        {emoji:'➡️',text:'東西往外流 = あげる',color:'#c8d4e8',border:'#88a0c8'},
-        {emoji:'⬅️',text:'東西流進來 = くれる',color:'#e8c8d4',border:'#c888a0'},
-        {emoji:'✅',text:'方向決定動詞！',color:'#c8e8d4',border:'#88c8a0'}
-      ],
-      formula:'➡️ 送出去 = あげる ｜ ⬅️ 收進來 = くれる'
-    },
-    blindspot:{
-      cn:'中文：「給」一個字通吃，不分方向',
-      jp:'日文：送出去 = あげる，收進來 = くれる'
-    },
-    words:[
-      {
-        id:'jp_give_01',
-        sentence:'私は友達に本をあげました。',
-        chinese:'我送書給朋友。',
-        base:'あげる',baseCn:'送出去',
-        formula:'[私は] + [友達に] + [本を] + あげました',
-        blocks:['私は','友達に','本を','あげました'],
-        answer:['私は','友達に','本を','あげました'],
-        quizType:'direction',
-        direction:'outward',
-        dirFrom:'私(我)',dirTo:'友達(朋友)',
-        dirAnswer:'あげる',
-        distractors:['くれる','もらう']
-      },
-      {
-        id:'jp_give_02',
-        sentence:'友達が私にプレゼントをくれました。',
-        chinese:'朋友送我禮物。',
-        base:'くれる',baseCn:'給我（流進來）',
-        formula:'[友達が] + [私に] + [プレゼントを] + くれました',
-        blocks:['友達が','私に','プレゼントを','くれました'],
-        answer:['友達が','私に','プレゼントを','くれました'],
-        quizType:'direction',
-        direction:'inward',
-        dirFrom:'友達(朋友)',dirTo:'私(我)',
-        dirAnswer:'くれる',
-        distractors:['あげる','もらう']
-      },
-      {
-        id:'jp_give_03',
-        sentence:'先生が妹にお菓子をくれました。',
-        chinese:'老師給妹妹糖果。',
-        base:'くれる',baseCn:'給我方（流進來）',
-        formula:'[先生が] + [妹に] + [お菓子を] + くれました',
-        blocks:['先生が','妹に','お菓子を','くれました'],
-        answer:['先生が','妹に','お菓子を','くれました'],
-        quizType:'direction',
-        direction:'inward',
-        dirFrom:'先生(老師)',dirTo:'妹(妹妹=我方)',
-        dirAnswer:'くれる',
-        distractors:['あげる','もらう']
-      },
-      {
-        id:'jp_give_04',
-        sentence:'私は母に花をあげました。',
-        chinese:'我送花給媽媽。',
-        base:'あげる',baseCn:'送出去',
-        formula:'[私は] + [母に] + [花を] + あげました',
-        blocks:['私は','母に','花を','あげました'],
-        answer:['私は','母に','花を','あげました'],
-        quizType:'direction',
-        direction:'outward',
-        dirFrom:'私(我)',dirTo:'母(媽媽)',
-        dirAnswer:'あげる',
-        distractors:['くれる','もらう']
-      },
-      {
-        id:'jp_give_05',
-        sentence:'友達が弟に本をくれました。',
-        chinese:'朋友送書給弟弟。',
-        base:'くれる',baseCn:'給我方（流進來）',
-        formula:'[友達が] + [弟に] + [本を] + くれました',
-        blocks:['友達が','弟に','本を','くれました'],
-        answer:['友達が','弟に','本を','くれました'],
-        quizType:'direction',
-        direction:'inward',
-        dirFrom:'友達(朋友)',dirTo:'弟(弟弟=我方)',
-        dirAnswer:'くれる',
-        distractors:['あげる','もらう']
-      }
-    ]
-  },
-  {id:'r_jita', emoji:'🎬', name:'自他動詞 開く/開ける', suffixDisplay:'🎬 自他', coming:true, formula:'自動詞(狀態) vs 他動詞(人為)', words:[]},
-  {id:'r_exist', emoji:'📍', name:'存在句 あります/います', suffixDisplay:'📍 存在', coming:true, formula:'[場所に] + [物/生物が] + ある/いる', words:[]},
-  {id:'r_teiru', emoji:'📸', name:'持續態 ～ている', suffixDisplay:'📸 持續', coming:true, formula:'[動詞て形] + いる', words:[]},
-  {id:'r_kanji', emoji:'⚠️', name:'漢字陷阱 勉強≠勉強', suffixDisplay:'⚠️ 漢字', coming:true, formula:'同漢字 ≠ 同意思', words:[]}
+function speak(t,l){if(!('speechSynthesis' in window))return;speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(t);u.lang=l||'ja-JP';u.rate=0.75;speechSynthesis.speak(u);}
+function S(t){return '<span class="s" onclick="event.stopPropagation();speak(\''+t.replace(/'/g,"\\'")+'\')" title="'+t+'">🔊</span>';}
+
+const RULES=[
+{id:'r_particle',emoji:'🏷️',name:'助詞導航',formula:'名詞+助詞標籤→角色確定',
+comic:{panels:[{emoji:'📦',text:'日文名詞沒有位置',color:'#d4c8e8',border:'#a088c8'},{emoji:'🏷️',text:'貼上助詞標籤！',color:'#c8d4e8',border:'#88a0c8'},{emoji:'📍',text:'に=目的地/對象',color:'#e8d4c8',border:'#c8a088'},{emoji:'✅',text:'標籤決定角色！',color:'#c8e8d4',border:'#88c8a0'}],formula:'🏷️は=主題 が=主角 を=受詞 に=方向'},
+blindspot:{cn:'中文靠語序決定誰做什麼',jp:'日文靠助詞標籤決定角色'},
+words:[
+{id:'p01',sentence:'私は学校に行きます。',chinese:'我去學校。',quizType:'particle',quizSlot:'学校[?]行きます',quizAnswer:'に',distractors:['を','が'],hint:'目的地用 に',blocks:['私は','学校に','行きます'],formula:'[私は]+[学校に]+[行きます]'},
+{id:'p02',sentence:'先生に聞きます。',chinese:'問老師。',quizType:'particle',quizSlot:'先生[?]聞きます',quizAnswer:'に',distractors:['を','は'],hint:'對象（人）也用 に',blocks:['先生に','聞きます'],formula:'[先生に]+[聞きます]'},
+{id:'p03',sentence:'りんごを食べます。',chinese:'吃蘋果。',quizType:'particle',quizSlot:'りんご[?]食べます',quizAnswer:'を',distractors:['に','が'],hint:'受詞（被吃的）用 を',blocks:['りんごを','食べます'],formula:'[りんごを]+[食べます]'},
+{id:'p04',sentence:'猫が走ります。',chinese:'貓在跑。',quizType:'particle',quizSlot:'猫[?]走ります',quizAnswer:'が',distractors:['は','を'],hint:'動作主角用 が',blocks:['猫が','走ります'],formula:'[猫が]+[走ります]'},
+{id:'p05',sentence:'私は水を飲みます。',chinese:'我喝水。',quizType:'particle',quizSlot:'水[?]飲みます',quizAnswer:'を',distractors:['に','が'],hint:'受詞（被喝的）用 を',blocks:['私は','水を','飲みます'],formula:'[私は]+[水を]+[飲みます]'}
+]},
+{id:'r_giving',emoji:'🎁',name:'禮物流向',formula:'送出=あげる 收入=くれる',
+comic:{panels:[{emoji:'🎁',text:'我要送書給朋友',color:'#d4c8e8',border:'#a088c8'},{emoji:'➡️',text:'東西往外流=あげる',color:'#c8d4e8',border:'#88a0c8'},{emoji:'⬅️',text:'東西流進來=くれる',color:'#e8c8d4',border:'#c888a0'},{emoji:'✅',text:'方向決定動詞！',color:'#c8e8d4',border:'#88c8a0'}],formula:'➡️送出去=あげる ⬅️收進來=くれる'},
+blindspot:{cn:'中文「給」一個字通吃',jp:'日文：送出去=あげる 收進來=くれる'},
+words:[
+{id:'g01',sentence:'私は友達に本をあげました。',chinese:'我送書給朋友。',quizType:'direction',direction:'outward',dirFrom:'私(我)',dirTo:'友達(朋友)',dirAnswer:'あげる',distractors:['くれる','もらう'],blocks:['私は','友達に','本を','あげました'],formula:'[私は]+[友達に]+[本を]+[あげました]'},
+{id:'g02',sentence:'友達が私にプレゼントをくれました。',chinese:'朋友送我禮物。',quizType:'direction',direction:'inward',dirFrom:'友達(朋友)',dirTo:'私(我)',dirAnswer:'くれる',distractors:['あげる','もらう'],blocks:['友達が','私に','プレゼントを','くれました'],formula:'[友達が]+[私に]+[プレゼントを]+[くれました]'},
+{id:'g03',sentence:'先生が妹にお菓子をくれました。',chinese:'老師給妹妹糖果。',quizType:'direction',direction:'inward',dirFrom:'先生(老師)',dirTo:'妹(妹妹=我方)',dirAnswer:'くれる',distractors:['あげる','もらう'],blocks:['先生が','妹に','お菓子を','くれました'],formula:'[先生が]+[妹に]+[お菓子を]+[くれました]'},
+{id:'g04',sentence:'私は母に花をあげました。',chinese:'我送花給媽媽。',quizType:'direction',direction:'outward',dirFrom:'私(我)',dirTo:'母(媽媽)',dirAnswer:'あげる',distractors:['くれる','もらう'],blocks:['私は','母に','花を','あげました'],formula:'[私は]+[母に]+[花を]+[あげました]'},
+{id:'g05',sentence:'友達が弟に本をくれました。',chinese:'朋友送書給弟弟。',quizType:'direction',direction:'inward',dirFrom:'友達(朋友)',dirTo:'弟(弟弟=我方)',dirAnswer:'くれる',distractors:['あげる','もらう'],blocks:['友達が','弟に','本を','くれました'],formula:'[友達が]+[弟に]+[本を]+[くれました]'}
+]},
+{id:'r_jita',emoji:'🎬',name:'自他動詞',formula:'🙅無手=自動詞 ✋有手=他動詞',
+comic:{panels:[{emoji:'🚪',text:'門開了（自然）',color:'#d4e8d4',border:'#88c888'},{emoji:'🙅',text:'沒有手！→開く',color:'#e8e8c8',border:'#c8c888'},{emoji:'✋',text:'有人推門（人為）',color:'#e8d4c8',border:'#c8a088'},{emoji:'✅',text:'有手！→開ける',color:'#c8d4e8',border:'#88a0c8'}],formula:'🙅無手=自動詞(狀態) ✋有手=他動詞(動作)'},
+blindspot:{cn:'中文「門開了」不分是誰開的',jp:'日文：開く(自然) vs 開ける(人為)'},
+words:[
+{id:'j01',sentence:'ドアが開きました。',chinese:'門開了。（自然）',quizType:'jita',quizQ:'門自己開了（沒人碰）',quizAnswer:'開く',distractors:['開ける','閉める'],hint:'🙅 無手→自動詞',blocks:['ドアが','開きました'],formula:'[ドアが]+[開きました]'},
+{id:'j02',sentence:'私はドアを開けました。',chinese:'我開了門。（人為）',quizType:'jita',quizQ:'有人用手去推門',quizAnswer:'開ける',distractors:['開く','閉まる'],hint:'✋ 有手→他動詞',blocks:['私は','ドアを','開けました'],formula:'[私は]+[ドアを]+[開けました]'},
+{id:'j03',sentence:'電気がつきました。',chinese:'燈亮了。（自然）',quizType:'jita',quizQ:'燈自己亮了',quizAnswer:'つく',distractors:['つける','消す'],hint:'🙅 無手→自動詞',blocks:['電気が','つきました'],formula:'[電気が]+[つきました]'},
+{id:'j04',sentence:'私は電気をつけました。',chinese:'我開了燈。（人為）',quizType:'jita',quizQ:'有人去按開關',quizAnswer:'つける',distractors:['つく','消える'],hint:'✋ 有手→他動詞',blocks:['私は','電気を','つけました'],formula:'[私は]+[電気を]+[つけました]'},
+{id:'j05',sentence:'窓が閉まりました。',chinese:'窗戶關了。（自然）',quizType:'jita',quizQ:'窗戶被風吹關了',quizAnswer:'閉まる',distractors:['閉める','開く'],hint:'🙅 無手→自動詞',blocks:['窓が','閉まりました'],formula:'[窓が]+[閉まりました]'}
+]},
+{id:'r_exist',emoji:'📍',name:'存在句',formula:'物品=あります 生物=います',
+comic:{panels:[{emoji:'📦',text:'桌上有書（物品）',color:'#d4c8e8',border:'#a088c8'},{emoji:'📍',text:'物品→あります',color:'#c8d4e8',border:'#88a0c8'},{emoji:'🐱',text:'房間有貓（生物）',color:'#e8d4c8',border:'#c8a088'},{emoji:'✅',text:'生物→います',color:'#c8e8d4',border:'#88c8a0'}],formula:'📦物品=あります 🐱生物=います'},
+blindspot:{cn:'中文「有」一個字通用',jp:'日文：物品=あります 生物=います'},
+words:[
+{id:'e01',sentence:'机の上に本があります。',chinese:'桌上有書。',quizType:'exist',quizQ:'本(書)是？',quizAnswer:'あります',distractors:['います','ありません'],hint:'📦 書=物品',blocks:['机の上に','本が','あります'],formula:'[机の上に]+[本が]+[あります]'},
+{id:'e02',sentence:'公園に猫がいます。',chinese:'公園有貓。',quizType:'exist',quizQ:'猫(貓)是？',quizAnswer:'います',distractors:['あります','いません'],hint:'🐱 貓=生物',blocks:['公園に','猫が','います'],formula:'[公園に]+[猫が]+[います]'},
+{id:'e03',sentence:'部屋にテレビがあります。',chinese:'房間有電視。',quizType:'exist',quizQ:'テレビ(電視)是？',quizAnswer:'あります',distractors:['います','ありません'],hint:'📦 電視=物品',blocks:['部屋に','テレビが','あります'],formula:'[部屋に]+[テレビが]+[あります]'},
+{id:'e04',sentence:'学校に先生がいます。',chinese:'學校有老師。',quizType:'exist',quizQ:'先生(老師)是？',quizAnswer:'います',distractors:['あります','いません'],hint:'👤 老師=生物',blocks:['学校に','先生が','います'],formula:'[学校に]+[先生が]+[います]'},
+{id:'e05',sentence:'かばんの中にお金があります。',chinese:'包包裡有錢。',quizType:'exist',quizQ:'お金(錢)是？',quizAnswer:'あります',distractors:['います','ありません'],hint:'📦 錢=物品',blocks:['かばんの中に','お金が','あります'],formula:'[かばんの中に]+[お金が]+[あります]'}
+]},
+{id:'r_teiru',emoji:'📸',name:'持續態',formula:'～ている=正在做 or 狀態持續',
+comic:{panels:[{emoji:'🍽️',text:'正在吃飯（動作中）',color:'#d4e8d4',border:'#88c888'},{emoji:'📸',text:'拍快照→～ている',color:'#e8e8c8',border:'#c8c888'},{emoji:'💍',text:'結婚了（狀態持續）',color:'#e8c8d4',border:'#c888a0'},{emoji:'✅',text:'也是～ている！',color:'#c8d4e8',border:'#88a0c8'}],formula:'📸～ている = 正在做 + 狀態持續'},
+blindspot:{cn:'中文「正在」只表示進行中',jp:'日文～ている 還包含狀態的持續'},
+words:[
+{id:'t01',sentence:'ご飯を食べています。',chinese:'正在吃飯。',quizType:'teiru',quizQ:'「吃飯」是動作進行 or 狀態持續？',quizAnswer:'動作進行',distractors:['狀態持續'],hint:'🍽️ 正在進行的動作',blocks:['ご飯を','食べて','います'],formula:'[ご飯を]+[食べて]+[います]'},
+{id:'t02',sentence:'本を読んでいます。',chinese:'正在看書。',quizType:'teiru',quizQ:'「看書」是動作進行 or 狀態持續？',quizAnswer:'動作進行',distractors:['狀態持續'],hint:'📖 正在進行的動作',blocks:['本を','読んで','います'],formula:'[本を]+[読んで]+[います]'},
+{id:'t03',sentence:'友達と話しています。',chinese:'正在和朋友說話。',quizType:'teiru',quizQ:'「說話」是動作進行 or 狀態持續？',quizAnswer:'動作進行',distractors:['狀態持續'],hint:'💬 正在進行的動作',blocks:['友達と','話して','います'],formula:'[友達と]+[話して]+[います]'},
+{id:'t04',sentence:'姉は結婚しています。',chinese:'姐姐結婚了。（已婚狀態）',quizType:'teiru',quizQ:'「結婚している」是動作進行 or 狀態持續？',quizAnswer:'狀態持續',distractors:['動作進行'],hint:'💍 不是正在結婚，是已婚狀態！',blocks:['姉は','結婚して','います'],formula:'[姉は]+[結婚して]+[います]'},
+{id:'t05',sentence:'この道は曲がっています。',chinese:'這條路是彎的。（彎曲狀態）',quizType:'teiru',quizQ:'「曲がっている」是動作進行 or 狀態持續？',quizAnswer:'狀態持續',distractors:['動作進行'],hint:'🛤️ 不是正在彎，是已彎的狀態！',blocks:['この道は','曲がって','います'],formula:'[この道は]+[曲がって]+[います]'}
+]},
+{id:'r_kanji',emoji:'⚠️',name:'漢字陷阱',formula:'日文漢字 ≠ 中文意思',
+comic:{panels:[{emoji:'📖',text:'勉強？是學習！',color:'#e8d4d4',border:'#c8a0a0'},{emoji:'✉️',text:'手紙？是信！',color:'#d4e8d4',border:'#a0c8a0'},{emoji:'⚠️',text:'看到漢字別亂猜！',color:'#e8e8c8',border:'#c8c8a0'},{emoji:'✅',text:'日文漢字要重新學',color:'#d4d4e8',border:'#a0a0c8'}],formula:'⚠️看到漢字→查日文意思→別用中文猜'},
+blindspot:{cn:'台灣人看到漢字直覺用中文理解',jp:'日文很多漢字跟中文意思完全不同'},
+words:[
+{id:'k01',sentence:'毎日、勉強しています。',chinese:'每天都在學習。',quizType:'kanji',quizQ:'日文「勉強」是什麼意思？',quizAnswer:'學習/讀書',distractors:['勉強/強迫','努力/加油'],hint:'勉強(べんきょう)=學習',blocks:['毎日','勉強して','います'],formula:'勉強 ≠ 勉強(中文)'},
+{id:'k02',sentence:'手紙を書きました。',chinese:'寫了一封信。',quizType:'kanji',quizQ:'日文「手紙」是什麼意思？',quizAnswer:'信/書信',distractors:['紙巾/手帕','手工紙'],hint:'手紙(てがみ)=信',blocks:['手紙を','書きました'],formula:'手紙 ≠ 紙巾'},
+{id:'k03',sentence:'大丈夫ですか？',chinese:'你沒事嗎？',quizType:'kanji',quizQ:'日文「大丈夫」是什麼意思？',quizAnswer:'沒問題/沒事',distractors:['大男人/丈夫','很厲害'],hint:'大丈夫(だいじょうぶ)=沒事',blocks:['大丈夫','ですか'],formula:'大丈夫 ≠ 大丈夫(中文)'},
+{id:'k04',sentence:'あの人は丈夫です。',chinese:'那個人很健壯。',quizType:'kanji',quizQ:'日文「丈夫」是什麼意思？',quizAnswer:'健壯/結實',distractors:['老公/丈夫','大人'],hint:'丈夫(じょうぶ)=結實',blocks:['あの人は','丈夫','です'],formula:'丈夫 ≠ 老公'},
+{id:'k05',sentence:'娘は元気です。',chinese:'女兒很有精神。',quizType:'kanji',quizQ:'日文「娘」是什麼意思？',quizAnswer:'女兒',distractors:['姑娘/少女','媳婦'],hint:'娘(むすめ)=女兒',blocks:['娘は','元気','です'],formula:'娘 ≠ 娘(中文的姑娘)'}
+]}
 ];
 
-// ═══════════════════════════════════════
-// STATE
-// ═══════════════════════════════════════
-let currentUser = 'iggy';
-let currentRuleIdx = 1; // Start at 授受動詞 (the pilot)
-let selectedWordIdx = -1;
-let totalScore = 0;
-let progress = {};
-let quizAnswered = {};
+let currentUser='iggy',currentRuleIdx=0,selectedWordIdx=-1,totalScore=0,progress={},quizAnswered={};
+function loadUserData(){currentUser=localStorage.getItem('jl-user')||'iggy';totalScore=parseInt(localStorage.getItem('jl-'+currentUser+'-score')||'0');progress=JSON.parse(localStorage.getItem('jl-'+currentUser+'-progress')||'{}');quizAnswered=JSON.parse(localStorage.getItem('jl-'+currentUser+'-quiz')||'{}');document.querySelectorAll('.user-btn').forEach(b=>b.classList.remove('active'));document.getElementById('btn-'+currentUser)?.classList.add('active');updateScore();}
+function saveUserData(){localStorage.setItem('jl-user',currentUser);localStorage.setItem('jl-'+currentUser+'-score',totalScore);localStorage.setItem('jl-'+currentUser+'-progress',JSON.stringify(progress));localStorage.setItem('jl-'+currentUser+'-quiz',JSON.stringify(quizAnswered));}
+function switchUser(uid){currentUser=uid;localStorage.setItem('jl-user',uid);loadUserData();selectedWordIdx=-1;render();}
+function updateScore(){document.getElementById('score-badge').textContent=totalScore+' 分';}
+function handleQuiz(wk,ch,co){if(quizAnswered[wk])return;quizAnswered[wk]=ch;if(ch===co){totalScore+=10;progress[wk]='correct';}else{progress[wk]='wrong';}saveUserData();updateScore();renderContent();renderProgress();}
+function shuffle(a){const b=[...a];for(let i=b.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[b[i],b[j]]=[b[j],b[i]];}return b;}
+function render(){renderTabs();renderContent();renderProgress();}
+function renderTabs(){document.getElementById('rule-tabs').innerHTML=RULES.map((r,i)=>'<button class="rule-tab'+(i===currentRuleIdx?' active':'')+'" onclick="currentRuleIdx='+i+';selectedWordIdx=-1;render();">'+r.emoji+' '+r.name+'</button>').join('');}
 
-// ═══════════════════════════════════════
-// USER DATA
-// ═══════════════════════════════════════
-function loadUserData() {
-  currentUser = localStorage.getItem('jl-user') || 'iggy';
-  totalScore = parseInt(localStorage.getItem('jl-'+currentUser+'-score') || '0');
-  progress = JSON.parse(localStorage.getItem('jl-'+currentUser+'-progress') || '{}');
-  quizAnswered = JSON.parse(localStorage.getItem('jl-'+currentUser+'-quiz') || '{}');
-  document.querySelectorAll('.user-btn').forEach(b => b.classList.remove('active'));
-  document.getElementById('btn-'+currentUser)?.classList.add('active');
-  updateScore();
-}
-function saveUserData() {
-  localStorage.setItem('jl-user', currentUser);
-  localStorage.setItem('jl-'+currentUser+'-score', totalScore);
-  localStorage.setItem('jl-'+currentUser+'-progress', JSON.stringify(progress));
-  localStorage.setItem('jl-'+currentUser+'-quiz', JSON.stringify(quizAnswered));
-}
-function switchUser(uid) {
-  currentUser = uid;
-  localStorage.setItem('jl-user', uid);
-  loadUserData();
-  selectedWordIdx = -1;
-  render();
-}
-function updateScore() {
-  document.getElementById('score-badge').textContent = totalScore + ' 分';
-}
+function renderContent(){
+  const r=RULES[currentRuleIdx],c=r.comic;
+  let h='<div class="rule-card"><div class="rule-header"><span class="rule-emoji">'+r.emoji+'</span><div><div class="rule-name">'+r.name+'</div><span class="rule-formula-tag">'+r.formula+'</span></div></div>';
+  h+='<div class="comic-grid">'+c.panels.map((p,i)=>'<div class="comic-panel" style="background:'+p.color+';border:1px solid '+p.border+'"><div class="panel-num">'+(i+1)+'</div><div class="panel-emoji">'+p.emoji+'</div><div class="panel-text">'+p.text+'</div></div>').join('')+'</div>';
+  h+='<div class="comic-formula-text">'+c.formula+'</div>';
+  h+='<div class="blindspot-box"><div class="bs-label">💡 中日文思維差異</div><div class="bs-grid"><div class="bs-cn"><b>🇹🇼 中文</b>'+r.blindspot.cn+'</div><div class="bs-jp"><b>🇯🇵 日文</b>'+r.blindspot.jp+'</div></div></div></div>';
+  h+='<div class="section-label">📚 練習句型（'+r.words.length+' 句）</div>';
+  h+='<div class="word-grid">'+r.words.map((w,i)=>{const d=progress[w.id]==='correct';return '<button class="word-chip'+(i===selectedWordIdx?' active':'')+'" onclick="selectedWordIdx='+i+';renderContent();renderProgress();" style="'+(d?'border-color:var(--green);':'')+'">'+(d?'✅ ':'')+w.chinese+'</button>';}).join('')+'</div>';
 
-// ═══════════════════════════════════════
-// SPEAK
-// ═══════════════════════════════════════
-function speak(text, lang) {
-  if (!('speechSynthesis' in window)) return;
-  speechSynthesis.cancel();
-  const u = new SpeechSynthesisUtterance(text);
-  u.lang = lang || 'ja-JP';
-  u.rate = 0.75;
-  speechSynthesis.speak(u);
-}
-
-// ═══════════════════════════════════════
-// QUIZ
-// ═══════════════════════════════════════
-function handleQuiz(wordKey, chosen, correct) {
-  if (quizAnswered[wordKey]) return;
-  quizAnswered[wordKey] = chosen;
-  if (chosen === correct) {
-    totalScore += 10;
-    progress[wordKey] = 'correct';
-  } else {
-    progress[wordKey] = 'wrong';
-  }
-  saveUserData();
-  updateScore();
-  renderContent();
-  renderProgress();
-}
-
-// ═══════════════════════════════════════
-// RENDER
-// ═══════════════════════════════════════
-function render() { renderTabs(); renderContent(); renderProgress(); }
-
-function renderTabs() {
-  document.getElementById('rule-tabs').innerHTML = RULES.map((r, i) =>
-    `<button class="rule-tab${i===currentRuleIdx?' active':''}${r.coming?' coming':''}" 
-      onclick="${r.coming?'':'currentRuleIdx='+i+';selectedWordIdx=-1;render();'}">${r.suffixDisplay}${r.coming?' (soon)':''}</button>`
-  ).join('');
-}
-
-function renderContent() {
-  const r = RULES[currentRuleIdx];
-  if (!r || r.coming || !r.words.length) {
-    document.getElementById('content').innerHTML = `
-      <div class="rule-card" style="text-align:center;padding:40px;">
-        <div style="font-size:2rem;margin-bottom:10px;">${r?.emoji||'🚧'}</div>
-        <div style="font-size:0.85rem;font-weight:700;">${r?.name||'Coming soon'}</div>
-        <div style="font-size:0.7rem;color:var(--dim);margin-top:6px;">此規則即將加入，請先練習「🎁 授受動詞」</div>
-      </div>`;
-    return;
-  }
-
-  const c = r.comic;
-  let h = `
-  <div class="rule-card">
-    <div class="rule-header">
-      <span class="rule-emoji">${r.emoji}</span>
-      <div>
-        <div class="rule-name">${r.name} <button class="speak-btn" onclick="event.stopPropagation();speak('あげる')" style="width:24px;height:24px;font-size:0.8rem;vertical-align:middle;" title="唸 あげる">🔊</button> <button class="speak-btn" onclick="event.stopPropagation();speak('くれる')" style="width:24px;height:24px;font-size:0.8rem;vertical-align:middle;" title="唸 くれる">🔊</button></div>
-        <span class="rule-formula-tag">${r.formula}</span>
-      </div>
-    </div>
-    <div class="comic-grid">${c.panels.map((p,i)=>`
-      <div class="comic-panel" style="background:${p.color};border:1px solid ${p.border}">
-        <div class="panel-num">${i+1}</div>
-        <div class="panel-emoji">${p.emoji}</div>
-        <div class="panel-text">${p.text}</div>
-      </div>`).join('')}
-    </div>
-    <div class="comic-formula-text">${c.formula} <button class="speak-btn" onclick="speak('あげる')" style="width:22px;height:22px;font-size:0.75rem;vertical-align:middle;" title="あげる">🔊</button> <button class="speak-btn" onclick="speak('くれる')" style="width:22px;height:22px;font-size:0.75rem;vertical-align:middle;" title="くれる">🔊</button></div>
-    <div class="blindspot-box">
-      <div class="bs-label">💡 中日文思維差異</div>
-      <div class="bs-grid">
-        <div class="bs-cn"><b>🇹🇼 中文</b>${r.blindspot.cn}</div>
-        <div class="bs-jp"><b>🇯🇵 日文</b>${r.blindspot.jp}</div>
-      </div>
-    </div>
-  </div>
-
-  <div class="section-label">📚 練習句型（${r.words.length} 句）— 點擊挑戰</div>
-  <div class="word-grid">${r.words.map((w,i)=>{
-    const isActive = i === selectedWordIdx;
-    const isDone = progress[w.id] === 'correct';
-    return `<button class="word-chip${isActive?' active':''}" onclick="selectedWordIdx=${i};renderContent();renderProgress();" style="${isDone?'border-color:var(--green);':''}">
-      <span>${isDone?'✅ ':''}${w.chinese}</span>
-    </button>`;
-  }).join('')}</div>`;
-
-  if (selectedWordIdx >= 0) {
-    const w = r.words[selectedWordIdx];
-    const answered = quizAnswered[w.id];
-
-    // Direction quiz for 授受動詞
-    h += `
-    <div class="detail-card">
-      <div class="direction-viz">
-        <span class="dir-person dir-from">${w.dirFrom} <span onclick="speak('${w.dirFrom.split('(')[0]}')" style="cursor:pointer;font-size:0.7rem;" title="唸">🔊</span></span>
-        <span class="dir-arrow">${w.direction==='outward'?'➡️':'⬅️'}</span>
-        <span class="dir-person dir-to">${w.dirTo} <span onclick="speak('${w.dirTo.split('(')[0]}')" style="cursor:pointer;font-size:0.7rem;" title="唸">🔊</span></span>
-      </div>
-      <div style="text-align:center;font-size:0.8rem;margin:6px 0;">
-        <span style="color:var(--dim);">${w.chinese}</span>
-      </div>
-      <div style="text-align:center;font-size:0.72rem;color:var(--gold);margin:8px 0;">
-        🧪 東西從 ${w.dirFrom.split('(')[0]} 流向 ${w.dirTo.split('(')[0]}，要用哪個動詞？
-      </div>
-      <div class="quiz-row">${[w.dirAnswer, ...w.distractors].sort(()=>Math.random()-0.5).map(o => {
-        let cls = 'quiz-opt';
-        if (answered) {
-          if (o === w.dirAnswer) cls += ' correct';
-          else if (o === answered && o !== w.dirAnswer) cls += ' wrong';
-        }
-        return `<button class="${cls}" onclick="handleQuiz('${w.id}','${o}','${w.dirAnswer}')"${answered?' disabled':''}>${o} <span onclick="event.stopPropagation();speak('${o}')" style="cursor:pointer;font-size:0.7rem;" title="唸 ${o}">🔊</span></button>`;
-      }).join('')}</div>`;
-
-    if (answered) {
-      const isC = answered === w.dirAnswer;
-      h += `
-      <div style="text-align:center;margin-top:10px;font-size:0.75rem;color:${isC?'var(--green)':'var(--red)'};">
-        ${isC?'✅ 正確！':'❌ 正確答案：'+w.dirAnswer}
-      </div>
-      <div style="text-align:center;margin:8px 0;font-size:0.68rem;color:var(--dim);">
-        ${w.direction==='outward'?'➡️ 送出去（離開我方）= あげる':'⬅️ 流進來（進入我方）= くれる'}
-      </div>
-      <div style="text-align:center;margin:6px 0;">
-        <span style="font-size:1rem;font-weight:700;">${w.sentence}</span>
-        <button class="speak-btn" onclick="speak('${w.sentence}')" title="唸出完整句子" style="margin-left:6px;vertical-align:middle;">🔊</button>
-      </div>
-      <div class="block-row">
-        ${w.blocks.map((b,i) => {
-          let cls = 'blk ';
-          if (b.includes('は') || b.includes('が')) cls += 'blk-base';
-          else if (b.includes('に')) cls += 'blk-particle';
-          else if (b.includes('を')) cls += 'blk-particle';
-          else cls += 'blk-verb';
-          return `<span class="${cls}">${b}</span>`;
-        }).join('<span class="blk blk-op">+</span>')}
-      </div>
-      <div style="text-align:center;font-size:0.65rem;color:var(--dim);">${w.formula}</div>`;
+  if(selectedWordIdx>=0){
+    const w=r.words[selectedWordIdx],ans=quizAnswered[w.id];
+    h+='<div class="detail-card">';
+    const correct=w.dirAnswer||w.quizAnswer;
+    if(w.quizType==='direction'){
+      const opts=shuffle([w.dirAnswer,...w.distractors]);
+      h+='<div class="direction-viz"><span class="dir-person dir-from">'+w.dirFrom+' '+S(w.dirFrom.split('(')[0])+'</span><span class="dir-arrow">'+(w.direction==='outward'?'➡️':'⬅️')+'</span><span class="dir-person dir-to">'+w.dirTo+' '+S(w.dirTo.split('(')[0])+'</span></div>';
+      h+='<div style="text-align:center;font-size:0.8rem;color:var(--dim);">'+w.chinese+'</div>';
+      h+='<div style="text-align:center;font-size:0.72rem;color:var(--gold);margin:8px 0;">🧪 東西從 '+w.dirFrom.split('(')[0]+' 流向 '+w.dirTo.split('(')[0]+'，用哪個動詞？</div>';
+      h+='<div class="quiz-row">'+opts.map(o=>{let cl='quiz-opt';if(ans){if(o===w.dirAnswer)cl+=' correct';else if(o===ans)cl+=' wrong';}return '<button class="'+cl+'" onclick="handleQuiz(\''+w.id+'\',\''+o+'\',\''+w.dirAnswer+'\')"'+(ans?' disabled':'')+'>'+o+' '+S(o)+'</button>';}).join('')+'</div>';
+    }else if(w.quizType==='particle'){
+      const opts=shuffle([w.quizAnswer,...w.distractors]);
+      h+='<div style="text-align:center;font-size:1.1rem;font-weight:700;margin:8px 0;">'+w.quizSlot.replace('[?]',' <span style="color:var(--gold);font-size:1.3rem;">❓</span> ')+'</div>';
+      h+='<div style="text-align:center;font-size:0.8rem;color:var(--dim);">'+w.chinese+'</div>';
+      h+='<div style="text-align:center;font-size:0.72rem;color:var(--gold);margin:8px 0;">🧪 空格要填哪個助詞？</div>';
+      h+='<div class="quiz-row">'+opts.map(o=>{let cl='quiz-opt';if(ans){if(o===w.quizAnswer)cl+=' correct';else if(o===ans)cl+=' wrong';}return '<button class="'+cl+'" onclick="handleQuiz(\''+w.id+'\',\''+o+'\',\''+w.quizAnswer+'\')"'+(ans?' disabled':'')+'>'+o+' '+S(o)+'</button>';}).join('')+'</div>';
+    }else if(w.quizType==='jita'){
+      const opts=shuffle([w.quizAnswer,...w.distractors]);
+      h+='<div style="text-align:center;font-size:0.85rem;font-weight:700;margin:8px 0;">'+w.quizQ+'</div>';
+      h+='<div style="text-align:center;font-size:0.8rem;color:var(--dim);">'+w.chinese+'</div>';
+      h+='<div style="text-align:center;font-size:0.72rem;color:var(--gold);margin:8px 0;">🧪 這個情境要用哪個動詞？</div>';
+      h+='<div class="quiz-row">'+opts.map(o=>{let cl='quiz-opt';if(ans){if(o===w.quizAnswer)cl+=' correct';else if(o===ans)cl+=' wrong';}return '<button class="'+cl+'" onclick="handleQuiz(\''+w.id+'\',\''+o+'\',\''+w.quizAnswer+'\')"'+(ans?' disabled':'')+'>'+o+' '+S(o)+'</button>';}).join('')+'</div>';
+    }else if(w.quizType==='exist'){
+      const opts=shuffle([w.quizAnswer,...w.distractors]);
+      h+='<div style="text-align:center;font-size:0.85rem;font-weight:700;margin:8px 0;">'+w.quizQ+'</div>';
+      h+='<div style="text-align:center;font-size:0.8rem;color:var(--dim);">'+w.chinese+'</div>';
+      h+='<div style="text-align:center;font-size:0.72rem;color:var(--gold);margin:8px 0;">🧪 物品 or 生物？用哪個？</div>';
+      h+='<div class="quiz-row">'+opts.map(o=>{let cl='quiz-opt';if(ans){if(o===w.quizAnswer)cl+=' correct';else if(o===ans)cl+=' wrong';}return '<button class="'+cl+'" onclick="handleQuiz(\''+w.id+'\',\''+o+'\',\''+w.quizAnswer+'\')"'+(ans?' disabled':'')+'>'+o+' '+S(o)+'</button>';}).join('')+'</div>';
+    }else if(w.quizType==='teiru'){
+      const opts=shuffle([w.quizAnswer,...w.distractors]);
+      h+='<div style="text-align:center;font-size:0.85rem;font-weight:700;margin:8px 0;">'+w.sentence+' '+S(w.sentence)+'</div>';
+      h+='<div style="text-align:center;font-size:0.8rem;color:var(--dim);">'+w.chinese+'</div>';
+      h+='<div style="text-align:center;font-size:0.72rem;color:var(--gold);margin:8px 0;">🧪 這句的「～ている」是？</div>';
+      h+='<div class="quiz-row">'+opts.map(o=>{let cl='quiz-opt';if(ans){if(o===w.quizAnswer)cl+=' correct';else if(o===ans)cl+=' wrong';}return '<button class="'+cl+'" onclick="handleQuiz(\''+w.id+'\',\''+o+'\',\''+w.quizAnswer+'\')"'+(ans?' disabled':'')+'>'+o+'</button>';}).join('')+'</div>';
+    }else if(w.quizType==='kanji'){
+      const opts=shuffle([w.quizAnswer,...w.distractors]);
+      h+='<div style="text-align:center;font-size:0.85rem;font-weight:700;margin:8px 0;">'+w.quizQ+'</div>';
+      h+='<div style="text-align:center;font-size:0.72rem;color:var(--gold);margin:8px 0;">🧪 選出正確的日文意思</div>';
+      h+='<div class="quiz-row">'+opts.map(o=>{let cl='quiz-opt';if(ans){if(o===w.quizAnswer)cl+=' correct';else if(o===ans)cl+=' wrong';}return '<button class="'+cl+'" onclick="handleQuiz(\''+w.id+'\',\''+o+'\',\''+w.quizAnswer+'\')"'+(ans?' disabled':'')+'>'+o+'</button>';}).join('')+'</div>';
     }
-    h += `</div>`;
+    if(ans){
+      const isC=ans===correct;
+      h+='<div style="text-align:center;margin-top:10px;font-size:0.75rem;color:'+(isC?'var(--green)':'var(--red)')+';">'+(isC?'✅ 正確！':'❌ 正確答案：'+correct)+'</div>';
+      if(w.hint)h+='<div style="text-align:center;font-size:0.68rem;color:var(--dim);margin:4px 0;">'+w.hint+'</div>';
+      h+='<div style="text-align:center;margin:8px 0;"><span style="font-size:1rem;font-weight:700;">'+w.sentence+'</span> <button class="speak-btn" onclick="speak(\''+w.sentence.replace(/'/g,"\\'")+'\')" style="vertical-align:middle;">🔊</button></div>';
+      h+='<div class="block-row">'+w.blocks.map(b=>{let cl='blk ';if(b.match(/[はがの]/))cl+='blk-n';else if(b.match(/[にをと]/))cl+='blk-p';else cl+='blk-v';return '<span class="'+cl+'">'+b+'</span>';}).join('<span class="blk blk-op">+</span>')+'</div>';
+      h+='<div style="text-align:center;font-size:0.65rem;color:var(--dim);">'+w.formula+'</div>';
+    }
+    h+='</div>';
   }
-
-  document.getElementById('content').innerHTML = h;
+  document.getElementById('content').innerHTML=h;
 }
 
-function renderProgress() {
-  const r = RULES[currentRuleIdx];
-  if (!r || !r.words.length) { document.getElementById('progress-row').innerHTML = ''; return; }
-  const doneCount = r.words.filter(w => progress[w.id] === 'correct').length;
-  document.getElementById('progress-row').innerHTML = r.words.map((w,i) => {
-    const done = progress[w.id] === 'correct';
-    const cur = i === selectedWordIdx;
-    return `<button class="pill${done?' done':''}${cur?' current':''}" onclick="selectedWordIdx=${i};renderContent();renderProgress();">${i+1}</button>`;
-  }).join('') + `<span class="progress-label">${doneCount}/${r.words.length}</span>`;
-}
+function renderProgress(){const r=RULES[currentRuleIdx];const done=r.words.filter(w=>progress[w.id]==='correct').length;document.getElementById('progress-row').innerHTML=r.words.map((w,i)=>{const d=progress[w.id]==='correct';return '<button class="pill'+(d?' done':'')+(i===selectedWordIdx?' current':'')+'" onclick="selectedWordIdx='+i+';renderContent();renderProgress();">'+(i+1)+'</button>';}).join('')+'<span class="progress-label">'+done+'/'+r.words.length+'</span>';}
 
-function shuffle(arr) {
-  const a = [...arr];
-  for (let i = a.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [a[i], a[j]] = [a[j], a[i]];
-  }
-  return a;
-}
-
-// ═══════════════════════════════════════
-// INIT
-// ═══════════════════════════════════════
-loadUserData();
-render();
+loadUserData();render();
+if('serviceWorker' in navigator){navigator.serviceWorker.register('./sw.js').catch(()=>{});}
 </script>
 </body>
 </html>
