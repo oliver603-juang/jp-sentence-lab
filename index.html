@@ -312,7 +312,7 @@ function renderContent() {
     <div class="rule-header">
       <span class="rule-emoji">${r.emoji}</span>
       <div>
-        <div class="rule-name">${r.name}</div>
+        <div class="rule-name">${r.name} <button class="speak-btn" onclick="event.stopPropagation();speak('あげる')" style="width:24px;height:24px;font-size:0.8rem;vertical-align:middle;" title="唸 あげる">🔊</button> <button class="speak-btn" onclick="event.stopPropagation();speak('くれる')" style="width:24px;height:24px;font-size:0.8rem;vertical-align:middle;" title="唸 くれる">🔊</button></div>
         <span class="rule-formula-tag">${r.formula}</span>
       </div>
     </div>
@@ -323,7 +323,7 @@ function renderContent() {
         <div class="panel-text">${p.text}</div>
       </div>`).join('')}
     </div>
-    <div class="comic-formula-text">${c.formula}</div>
+    <div class="comic-formula-text">${c.formula} <button class="speak-btn" onclick="speak('あげる')" style="width:22px;height:22px;font-size:0.75rem;vertical-align:middle;" title="あげる">🔊</button> <button class="speak-btn" onclick="speak('くれる')" style="width:22px;height:22px;font-size:0.75rem;vertical-align:middle;" title="くれる">🔊</button></div>
     <div class="blindspot-box">
       <div class="bs-label">💡 中日文思維差異</div>
       <div class="bs-grid">
@@ -350,9 +350,9 @@ function renderContent() {
     h += `
     <div class="detail-card">
       <div class="direction-viz">
-        <span class="dir-person dir-from">${w.dirFrom}</span>
+        <span class="dir-person dir-from">${w.dirFrom} <span onclick="speak('${w.dirFrom.split('(')[0]}')" style="cursor:pointer;font-size:0.7rem;" title="唸">🔊</span></span>
         <span class="dir-arrow">${w.direction==='outward'?'➡️':'⬅️'}</span>
-        <span class="dir-person dir-to">${w.dirTo}</span>
+        <span class="dir-person dir-to">${w.dirTo} <span onclick="speak('${w.dirTo.split('(')[0]}')" style="cursor:pointer;font-size:0.7rem;" title="唸">🔊</span></span>
       </div>
       <div style="text-align:center;font-size:0.8rem;margin:6px 0;">
         <span style="color:var(--dim);">${w.chinese}</span>
@@ -367,7 +367,7 @@ function renderContent() {
           if (o === w.dirAnswer) cls += ' correct';
           else if (o === answered && o !== w.dirAnswer) cls += ' wrong';
         }
-        return `<button class="${cls}" onclick="handleQuiz('${w.id}','${o}','${w.dirAnswer}')"${answered?' disabled':''}>${o}</button>`;
+        return `<button class="${cls}" onclick="handleQuiz('${w.id}','${o}','${w.dirAnswer}')"${answered?' disabled':''}>${o} <span onclick="event.stopPropagation();speak('${o}')" style="cursor:pointer;font-size:0.7rem;" title="唸 ${o}">🔊</span></button>`;
       }).join('')}</div>`;
 
     if (answered) {
