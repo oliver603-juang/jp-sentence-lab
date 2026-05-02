@@ -232,6 +232,109 @@ words:[
 {id:'tr03',sentence:'時間があったら、遊びに来てください。',chinese:'如果有時間請來玩。',quizType:'condition',quizQ:'「如果有時間」→ ある 怎麼變？',quizAnswer:'あったら',distractors:['あるたら','ありたら'],hint:'🌀 ある→あった→あったら',blocks:['時間が','あったら','遊びに来てください'],formula:'[時間があったら]+[遊びに来てください]'},
 {id:'tr04',sentence:'日本に行ったら、寿司を食べたいです。',chinese:'如果去日本，想吃壽司。',quizType:'condition',quizQ:'「如果去日本」→ 行く 怎麼變？',quizAnswer:'行ったら',distractors:['行くたら','行きたら'],hint:'🌀 行く→行った→行ったら',blocks:['日本に','行ったら','寿司を食べたいです'],formula:'[日本に行ったら]+[寿司を食べたいです]'},
 {id:'tr05',sentence:'暇だったら、映画を見ましょう。',chinese:'如果有空就看電影吧。',quizType:'condition',quizQ:'「如果有空」→ 暇(な形容詞) 怎麼變？',quizAnswer:'暇だったら',distractors:['暇なたら','暇のたら'],hint:'🌀 な形容詞：暇→暇だった→暇だったら',blocks:['暇だったら','映画を見ましょう'],formula:'[暇だったら]+[映画を見ましょう]'}
+]},
+// ════════════════════════════════════════
+// v4: N2 Rules (16-25)
+// ════════════════════════════════════════
+{id:'r_te',emoji:'🔗',name:'て形串連',formula:'動作1て + 動作2 = 連續動作',
+comic:{panels:[{emoji:'🚶',text:'起床（起きて）',color:'#d4e8d4',border:'#88c888'},{emoji:'🔗',text:'用 て 串起來',color:'#c8d4e8',border:'#88a0c8'},{emoji:'🍽️',text:'吃早餐（食べて）',color:'#e8d4c8',border:'#c8a088'},{emoji:'✅',text:'て = 動作鎖！',color:'#c8e8d4',border:'#88c8a0'}],formula:'🔗 動作1て + 動作2て + 動作3'},
+blindspot:{cn:'中文用逗號隔開就好',jp:'日文用 て形 把動作串成一條鏈'},
+words:[
+{id:'te01',sentence:'朝起きて、ご飯を食べます。',chinese:'早上起床，吃早餐。',quizType:'teform',quizQ:'起きる(起床) → て形？',quizAnswer:'起きて',distractors:['起きって','起きいて'],hint:'🔗 る動詞：去る+て',blocks:['朝','起きて','ご飯を食べます'],formula:'[起きて]+[食べます]'},
+{id:'te02',sentence:'本を読んで、寝ます。',chinese:'看書然後睡覺。',quizType:'teform',quizQ:'読む(讀) → て形？',quizAnswer:'読んで',distractors:['読みて','読って'],hint:'🔗 む→んで',blocks:['本を','読んで','寝ます'],formula:'[読んで]+[寝ます]'},
+{id:'te03',sentence:'手を洗って、食べます。',chinese:'洗手然後吃。',quizType:'teform',quizQ:'洗う(洗) → て形？',quizAnswer:'洗って',distractors:['洗いて','洗うて'],hint:'🔗 う→って',blocks:['手を','洗って','食べます'],formula:'[洗って]+[食べます]'},
+{id:'te04',sentence:'友達に会って、話しました。',chinese:'見了朋友，聊了天。',quizType:'teform',quizQ:'会う(見面) → て形？',quizAnswer:'会って',distractors:['会いて','会うて'],hint:'🔗 う→って',blocks:['友達に','会って','話しました'],formula:'[会って]+[話しました]'},
+{id:'te05',sentence:'シャワーを浴びて、出かけます。',chinese:'洗澡然後出門。',quizType:'teform',quizQ:'浴びる(淋浴) → て形？',quizAnswer:'浴びて',distractors:['浴びって','浴びいて'],hint:'🔗 る動詞：去る+て',blocks:['シャワーを','浴びて','出かけます'],formula:'[浴びて]+[出かけます]'}
+]},
+{id:'r_passive',emoji:'🎭',name:'被動 受身形',formula:'被...做了 → 受身形（被害/客觀）',
+comic:{panels:[{emoji:'🌧️',text:'被雨淋了',color:'#c8d4e8',border:'#88a0c8'},{emoji:'😫',text:'我是受害者！',color:'#e8c8d4',border:'#c888a0'},{emoji:'🎭',text:'動詞→受身形',color:'#d4e8d4',border:'#88c888'},{emoji:'✅',text:'被動=遭受/被迫',color:'#e8e8c8',border:'#c8c888'}],formula:'🎭 [被害者]は [加害者]に 受身形'},
+blindspot:{cn:'中文「被」一字搞定',jp:'日文動詞本身要變形（れる/られる）'},
+words:[
+{id:'ps01',sentence:'私は先生に褒められました。',chinese:'我被老師稱讚了。',quizType:'conjugation',quizQ:'褒める(稱讚) → 被動？',quizAnswer:'褒められる',distractors:['褒めさせる','褒めれる'],hint:'🎭 る動詞：去る+られる',blocks:['私は','先生に','褒められました'],formula:'[私は]+[先生に]+[褒められました]'},
+{id:'ps02',sentence:'弟にケーキを食べられました。',chinese:'蛋糕被弟弟吃了。',quizType:'conjugation',quizQ:'食べる(吃) → 被動？',quizAnswer:'食べられる',distractors:['食べさせる','食べれる'],hint:'🎭 る動詞：去る+られる',blocks:['弟に','ケーキを','食べられました'],formula:'[弟に]+[ケーキを]+[食べられました]'},
+{id:'ps03',sentence:'雨に降られました。',chinese:'被雨淋了。',quizType:'conjugation',quizQ:'降る(下雨) → 被動？',quizAnswer:'降られる',distractors:['降らせる','降れる'],hint:'🎭 う動詞：う→あれる',blocks:['雨に','降られました'],formula:'[雨に]+[降られました]'},
+{id:'ps04',sentence:'母に日記を読まれました。',chinese:'日記被媽媽看了。',quizType:'conjugation',quizQ:'読む(讀) → 被動？',quizAnswer:'読まれる',distractors:['読ませる','読めれる'],hint:'🎭 う動詞：む→まれる',blocks:['母に','日記を','読まれました'],formula:'[母に]+[日記を]+[読まれました]'},
+{id:'ps05',sentence:'電車で足を踏まれました。',chinese:'在電車上腳被踩了。',quizType:'conjugation',quizQ:'踏む(踩) → 被動？',quizAnswer:'踏まれる',distractors:['踏ませる','踏めれる'],hint:'🎭 う動詞：む→まれる',blocks:['電車で','足を','踏まれました'],formula:'[電車で]+[足を]+[踏まれました]'}
+]},
+{id:'r_causative',emoji:'👹',name:'使役 させる',formula:'讓/叫某人做 → 使役形',
+comic:{panels:[{emoji:'👹',text:'老師叫學生唸書',color:'#e8d4c8',border:'#c8a088'},{emoji:'📢',text:'命令/允許',color:'#d4c8e8',border:'#a088c8'},{emoji:'🔄',text:'動詞→使役形',color:'#c8e8d4',border:'#88c8a0'},{emoji:'✅',text:'させる=讓/叫',color:'#c8d4e8',border:'#88a0c8'}],formula:'👹 [命令者]は [執行者]に/を させる'},
+blindspot:{cn:'中文「讓」一個字',jp:'日文動詞要變形（せる/させる）'},
+words:[
+{id:'cs01',sentence:'母は私に野菜を食べさせました。',chinese:'媽媽叫我吃蔬菜。',quizType:'conjugation',quizQ:'食べる(吃) → 使役？',quizAnswer:'食べさせる',distractors:['食べられる','食べれる'],hint:'👹 る動詞：去る+させる',blocks:['母は','私に','野菜を','食べさせました'],formula:'[母は]+[私に]+[野菜を]+[食べさせました]'},
+{id:'cs02',sentence:'先生は学生を立たせました。',chinese:'老師叫學生站起來。',quizType:'conjugation',quizQ:'立つ(站) → 使役？',quizAnswer:'立たせる',distractors:['立たれる','立てせる'],hint:'👹 う動詞：つ→たせる',blocks:['先生は','学生を','立たせました'],formula:'[先生は]+[学生を]+[立たせました]'},
+{id:'cs03',sentence:'子供を自由に遊ばせます。',chinese:'讓小孩自由玩耍。',quizType:'conjugation',quizQ:'遊ぶ(玩) → 使役？',quizAnswer:'遊ばせる',distractors:['遊ばれる','遊びせる'],hint:'👹 う動詞：ぶ→ばせる',blocks:['子供を','自由に','遊ばせます'],formula:'[子供を]+[自由に]+[遊ばせます]'},
+{id:'cs04',sentence:'私に行かせてください。',chinese:'請讓我去。',quizType:'conjugation',quizQ:'行く(去) → 使役？',quizAnswer:'行かせる',distractors:['行かれる','行きせる'],hint:'👹 う動詞：く→かせる',blocks:['私に','行かせて','ください'],formula:'[私に]+[行かせて]+[ください]'},
+{id:'cs05',sentence:'先生は学生に本を読ませました。',chinese:'老師讓學生讀書。',quizType:'conjugation',quizQ:'読む(讀) → 使役？',quizAnswer:'読ませる',distractors:['読まれる','読みせる'],hint:'👹 う動詞：む→ませる',blocks:['先生は','学生に','本を','読ませました'],formula:'[先生は]+[学生に]+[本を]+[読ませました]'}
+]},
+{id:'r_causpass',emoji:'🔄',name:'使役被動',formula:'被迫做 → 使役受身形（最長變形）',
+comic:{panels:[{emoji:'😫',text:'被迫吃蔬菜...',color:'#e8c8c8',border:'#c88888'},{emoji:'🔄',text:'使役+被動=被迫',color:'#c8c8e8',border:'#8888c8'},{emoji:'📏',text:'最長的動詞變形！',color:'#e8e8c8',border:'#c8c888'},{emoji:'✅',text:'させられる=被迫做',color:'#c8e8d4',border:'#88c8a0'}],formula:'🔄 被迫做=使役+受身=させられる'},
+blindspot:{cn:'中文「被迫」兩個字',jp:'日文動詞要變兩次（使役+被動）'},
+words:[
+{id:'cp01',sentence:'野菜を食べさせられました。',chinese:'被迫吃蔬菜了。',quizType:'conjugation',quizQ:'食べる(吃) → 使役被動？',quizAnswer:'食べさせられる',distractors:['食べられさせる','食べさせれる'],hint:'🔄 させる+られる',blocks:['野菜を','食べさせられました'],formula:'食べる→食べさせられる'},
+{id:'cp02',sentence:'毎日走らせられます。',chinese:'每天被迫跑步。',quizType:'conjugation',quizQ:'走る(跑) → 使役被動？',quizAnswer:'走らせられる',distractors:['走られさせる','走らせれる'],hint:'🔄 させる+られる',blocks:['毎日','走らせられます'],formula:'走る→走らせられる'},
+{id:'cp03',sentence:'嫌いな歌を歌わせられました。',chinese:'被迫唱不喜歡的歌。',quizType:'conjugation',quizQ:'歌う(唱) → 使役被動？',quizAnswer:'歌わせられる',distractors:['歌われさせる','歌わせれる'],hint:'🔄 させる+られる',blocks:['嫌いな歌を','歌わせられました'],formula:'歌う→歌わせられる'},
+{id:'cp04',sentence:'長い時間待たせられました。',chinese:'被迫等了很久。',quizType:'conjugation',quizQ:'待つ(等) → 使役被動？',quizAnswer:'待たせられる',distractors:['待たれさせる','待たせれる'],hint:'🔄 させる+られる',blocks:['長い時間','待たせられました'],formula:'待つ→待たせられる'},
+{id:'cp05',sentence:'毎朝牛乳を飲まされました。',chinese:'每天早上被迫喝牛奶。',quizType:'conjugation',quizQ:'飲む(喝) → 使役被動(短縮)？',quizAnswer:'飲まされる',distractors:['飲まさせられる','飲ませられる'],hint:'🔄 短縮形：飲まされる',blocks:['毎朝','牛乳を','飲まされました'],formula:'飲む→飲まされる(短縮)'}
+]},
+{id:'r_youni',emoji:'📐',name:'ように 目標',formula:'為了能…/變得… → ように',
+comic:{panels:[{emoji:'🎯',text:'希望能說日語',color:'#d4c8e8',border:'#a088c8'},{emoji:'📐',text:'用 ように 設定目標',color:'#c8d4e8',border:'#88a0c8'},{emoji:'📖',text:'每天練習',color:'#d4e8d4',border:'#88c888'},{emoji:'✅',text:'ように=為了變成…',color:'#e8e8c8',border:'#c8c888'}],formula:'📐 [能力動詞]ように [努力] = 為了能…'},
+blindspot:{cn:'中文「為了」不分可控/不可控',jp:'日文 ように=不可控目標 ために=可控目標'},
+words:[
+{id:'yn01',sentence:'日本語が話せるように、毎日勉強します。',chinese:'為了能說日語，每天學習。',quizType:'bunpou',quizQ:'「為了能說日語」→ 用什麼連接？',quizAnswer:'ように',distractors:['ために','ことに'],hint:'📐 「能說」=能力=不可控→ように',blocks:['日本語が話せる','ように','毎日勉強します'],formula:'[話せる]+[ように]+[勉強します]'},
+{id:'yn02',sentence:'忘れないように、メモします。',chinese:'為了不忘記，做筆記。',quizType:'bunpou',quizQ:'「為了不忘記」→ 用什麼？',quizAnswer:'ように',distractors:['ために','ことに'],hint:'📐 否定(不忘記)=不可控→ように',blocks:['忘れない','ように','メモします'],formula:'[忘れない]+[ように]+[メモします]'},
+{id:'yn03',sentence:'早く起きられるように、早く寝ます。',chinese:'為了能早起，早睡。',quizType:'bunpou',quizQ:'「為了能早起」→ 用什麼？',quizAnswer:'ように',distractors:['ために','ことに'],hint:'📐 「能早起」=能力→ように',blocks:['早く起きられる','ように','早く寝ます'],formula:'[起きられる]+[ように]+[早く寝ます]'},
+{id:'yn04',sentence:'聞こえるように、大きい声で話します。',chinese:'為了讓人聽見，大聲說。',quizType:'bunpou',quizQ:'「為了讓人聽見」→ 用什麼？',quizAnswer:'ように',distractors:['ために','ことに'],hint:'📐 「聽得見」=不可控→ように',blocks:['聞こえる','ように','大きい声で話します'],formula:'[聞こえる]+[ように]+[話します]'},
+{id:'yn05',sentence:'風邪をひかないように、気をつけます。',chinese:'為了不感冒，要小心。',quizType:'bunpou',quizQ:'「為了不感冒」→ 用什麼？',quizAnswer:'ように',distractors:['ために','ことに'],hint:'📐 否定=不可控→ように',blocks:['風邪をひかない','ように','気をつけます'],formula:'[ひかない]+[ように]+[気をつけます]'}
+]},
+{id:'r_tameni',emoji:'🎯',name:'ために 目的',formula:'為了(意志性目標) → ために',
+comic:{panels:[{emoji:'🎯',text:'為了考試而唸書',color:'#e8d4c8',border:'#c8a088'},{emoji:'💪',text:'我自己決定的！',color:'#d4e8d4',border:'#88c888'},{emoji:'📌',text:'ために = 意志目標',color:'#c8d4e8',border:'#88a0c8'},{emoji:'✅',text:'ために=為了要…',color:'#e8e8c8',border:'#c8c888'}],formula:'🎯 [意志動詞]ために [行動] = 為了要…'},
+blindspot:{cn:'中文「為了」一個詞通吃',jp:'日文分：ために(意志) vs ように(能力)'},
+words:[
+{id:'tm01',sentence:'大学に入るために、勉強します。',chinese:'為了上大學，唸書。',quizType:'bunpou',quizQ:'「為了上大學」→ 用什麼？',quizAnswer:'ために',distractors:['ように','ことに'],hint:'🎯 「上大學」=自己決定=意志→ために',blocks:['大学に入る','ために','勉強します'],formula:'[入る]+[ために]+[勉強します]'},
+{id:'tm02',sentence:'旅行するために、お金を貯めます。',chinese:'為了旅行，存錢。',quizType:'bunpou',quizQ:'「為了旅行」→ 用什麼？',quizAnswer:'ために',distractors:['ように','ことに'],hint:'🎯 「旅行」=意志→ために',blocks:['旅行する','ために','お金を貯めます'],formula:'[旅行する]+[ために]+[貯めます]'},
+{id:'tm03',sentence:'健康のために、運動します。',chinese:'為了健康，運動。',quizType:'bunpou',quizQ:'「為了健康」→ 用什麼？',quizAnswer:'ために',distractors:['ように','ことに'],hint:'🎯 名詞+の+ために',blocks:['健康の','ために','運動します'],formula:'[健康の]+[ために]+[運動します]'},
+{id:'tm04',sentence:'家族のために、働きます。',chinese:'為了家人，工作。',quizType:'bunpou',quizQ:'「為了家人」→ 用什麼？',quizAnswer:'ために',distractors:['ように','ことに'],hint:'🎯 名詞+の+ために',blocks:['家族の','ために','働きます'],formula:'[家族の]+[ために]+[働きます]'},
+{id:'tm05',sentence:'日本に留学するために、貯金しています。',chinese:'為了去日本留學，在存錢。',quizType:'bunpou',quizQ:'「為了留學」→ 用什麼？',quizAnswer:'ために',distractors:['ように','ことに'],hint:'🎯 「留學」=意志→ために',blocks:['日本に留学する','ために','貯金しています'],formula:'[留学する]+[ために]+[貯金しています]'}
+]},
+{id:'r_noni',emoji:'⚖️',name:'のに 轉折',formula:'明明…卻… → のに（不滿/意外）',
+comic:{panels:[{emoji:'📖',text:'明明有唸書',color:'#d4e8d4',border:'#88c888'},{emoji:'⚖️',text:'のに = 明明…卻…',color:'#e8d4c8',border:'#c8a088'},{emoji:'😫',text:'卻考不好！',color:'#e8c8d4',border:'#c888a0'},{emoji:'✅',text:'のに = 不滿/意外',color:'#c8d4e8',border:'#88a0c8'}],formula:'⚖️ [事實]のに [意外結果] = 明明…卻…'},
+blindspot:{cn:'中文「雖然…但是」語氣平淡',jp:'日文 のに 帶有不滿/遺憾的情緒'},
+words:[
+{id:'nn01',sentence:'勉強したのに、テストに落ちました。',chinese:'明明唸了書，卻沒考過。',quizType:'bunpou',quizQ:'「明明唸了書卻…」→ 用什麼表示不滿？',quizAnswer:'のに',distractors:['ので','けど'],hint:'⚖️ 不滿/遺憾→のに',blocks:['勉強した','のに','テストに落ちました'],formula:'[勉強した]+[のに]+[落ちました]'},
+{id:'nn02',sentence:'約束したのに、来ませんでした。',chinese:'明明約好了，卻沒來。',quizType:'bunpou',quizQ:'「明明約好了卻…」→ 用什麼？',quizAnswer:'のに',distractors:['ので','から'],hint:'⚖️ 不滿→のに',blocks:['約束した','のに','来ませんでした'],formula:'[約束した]+[のに]+[来ませんでした]'},
+{id:'nn03',sentence:'高いのに、おいしくないです。',chinese:'明明很貴，卻不好吃。',quizType:'bunpou',quizQ:'「明明很貴卻…」→ 用什麼？',quizAnswer:'のに',distractors:['ので','けど'],hint:'⚖️ 不滿→のに',blocks:['高い','のに','おいしくないです'],formula:'[高い]+[のに]+[おいしくない]'},
+{id:'nn04',sentence:'薬を飲んだのに、まだ熱があります。',chinese:'明明吃了藥，還在發燒。',quizType:'bunpou',quizQ:'「明明吃了藥卻…」→ 用什麼？',quizAnswer:'のに',distractors:['ので','から'],hint:'⚖️ 遺憾→のに',blocks:['薬を飲んだ','のに','まだ熱があります'],formula:'[飲んだ]+[のに]+[熱があります]'},
+{id:'nn05',sentence:'日曜日なのに、仕事があります。',chinese:'明明是星期天，卻要工作。',quizType:'bunpou',quizQ:'「明明是星期天卻…」→ 用什麼？',quizAnswer:'のに',distractors:['ので','から'],hint:'⚖️ 不滿→のに',blocks:['日曜日な','のに','仕事があります'],formula:'[日曜日な]+[のに]+[仕事があります]'}
+]},
+{id:'r_node',emoji:'📎',name:'ので 原因',formula:'因為…所以… → ので（客觀理由）',
+comic:{panels:[{emoji:'🌧️',text:'因為下雨',color:'#c8d4e8',border:'#88a0c8'},{emoji:'📎',text:'ので = 因為（客觀）',color:'#d4e8d4',border:'#88c888'},{emoji:'🏠',text:'所以待在家',color:'#e8d4c8',border:'#c8a088'},{emoji:'✅',text:'ので=客觀/禮貌',color:'#e8e8c8',border:'#c8c888'}],formula:'📎 [原因]ので [結果] = 因為…所以…'},
+blindspot:{cn:'中文「因為」不分主觀客觀',jp:'日文 ので=客觀禮貌 から=主觀直接'},
+words:[
+{id:'nd01',sentence:'雨が降っているので、傘を持って行きます。',chinese:'因為在下雨，帶傘去。',quizType:'bunpou',quizQ:'「因為下雨」→ 客觀禮貌用什麼？',quizAnswer:'ので',distractors:['から','のに'],hint:'📎 客觀事實→ので',blocks:['雨が降っている','ので','傘を持って行きます'],formula:'[降っている]+[ので]+[持って行きます]'},
+{id:'nd02',sentence:'明日テストがあるので、勉強します。',chinese:'因為明天有考試，要唸書。',quizType:'bunpou',quizQ:'「因為有考試」→ 禮貌理由？',quizAnswer:'ので',distractors:['から','のに'],hint:'📎 客觀→ので',blocks:['テストがある','ので','勉強します'],formula:'[テストがある]+[ので]+[勉強します]'},
+{id:'nd03',sentence:'体の調子が悪いので、休みます。',chinese:'因為身體不舒服，請假。',quizType:'bunpou',quizQ:'跟上司說「因為不舒服」→ 用什麼？',quizAnswer:'ので',distractors:['から','のに'],hint:'📎 對上司=禮貌→ので',blocks:['体の調子が悪い','ので','休みます'],formula:'[悪い]+[ので]+[休みます]'},
+{id:'nd04',sentence:'電車が遅れたので、遅刻しました。',chinese:'因為電車誤點，遲到了。',quizType:'bunpou',quizQ:'「因為電車誤點」→ 客觀原因？',quizAnswer:'ので',distractors:['から','のに'],hint:'📎 客觀事實→ので',blocks:['電車が遅れた','ので','遅刻しました'],formula:'[遅れた]+[ので]+[遅刻しました]'},
+{id:'nd05',sentence:'道が混んでいるので、時間がかかります。',chinese:'因為路很塞，會花時間。',quizType:'bunpou',quizQ:'「因為路塞」→ 客觀理由？',quizAnswer:'ので',distractors:['から','のに'],hint:'📎 客觀→ので',blocks:['道が混んでいる','ので','時間がかかります'],formula:'[混んでいる]+[ので]+[時間がかかります]'}
+]},
+{id:'r_hodo',emoji:'🪜',name:'ほど 程度',formula:'…到…的程度 → ほど',
+comic:{panels:[{emoji:'🔥',text:'辣到哭的程度',color:'#e8d4c8',border:'#c8a088'},{emoji:'🪜',text:'ほど = 到…的程度',color:'#c8d4e8',border:'#88a0c8'},{emoji:'😭',text:'辣到哭出來了',color:'#e8c8d4',border:'#c888a0'},{emoji:'✅',text:'ほど=程度/比較',color:'#d4e8d4',border:'#88c888'}],formula:'🪜 [程度]ほど [結果] = 到…的程度'},
+blindspot:{cn:'中文「到…的程度」很長',jp:'日文 ほど 一個詞搞定程度表達'},
+words:[
+{id:'hd01',sentence:'泣くほど辛かったです。',chinese:'辣到哭了。',quizType:'bunpou',quizQ:'「到哭的程度」→ 用什麼？',quizAnswer:'ほど',distractors:['くらい','まで'],hint:'🪜 程度→ほど',blocks:['泣く','ほど','辛かったです'],formula:'[泣く]+[ほど]+[辛かった]'},
+{id:'hd02',sentence:'死ぬほど疲れました。',chinese:'累到要死。',quizType:'bunpou',quizQ:'「到死的程度」→ 用什麼？',quizAnswer:'ほど',distractors:['くらい','まで'],hint:'🪜 程度→ほど',blocks:['死ぬ','ほど','疲れました'],formula:'[死ぬ]+[ほど]+[疲れました]'},
+{id:'hd03',sentence:'日本語は勉強すればするほど面白いです。',chinese:'日語越學越有趣。',quizType:'bunpou',quizQ:'「越…越…」→ 用什麼？',quizAnswer:'ば〜ほど',distractors:['たら〜ほど','と〜ほど'],hint:'🪜 越…越…=ば+ほど',blocks:['勉強すれば','する','ほど','面白いです'],formula:'すればするほど=越…越…'},
+{id:'hd04',sentence:'今日ほど嬉しい日はありません。',chinese:'沒有比今天更開心的日子了。',quizType:'bunpou',quizQ:'「沒有比今天更…」→ 用什麼？',quizAnswer:'ほど〜ない',distractors:['より〜ない','くらい〜ない'],hint:'🪜 ほど〜ない=沒有比…更…',blocks:['今日','ほど','嬉しい日は','ありません'],formula:'[今日]+[ほど]+[嬉しい日はない]'},
+{id:'hd05',sentence:'びっくりするほど安いです。',chinese:'便宜到嚇一跳。',quizType:'bunpou',quizQ:'「到嚇一跳的程度」→ 用什麼？',quizAnswer:'ほど',distractors:['くらい','まで'],hint:'🪜 程度→ほど',blocks:['びっくりする','ほど','安いです'],formula:'[びっくりする]+[ほど]+[安い]'}
+]},
+{id:'r_keigo',emoji:'👔',name:'敬語入門',formula:'尊敬(對方抬高) vs 謙讓(自己壓低)',
+comic:{panels:[{emoji:'👔',text:'跟上司/長輩說話',color:'#d4c8e8',border:'#a088c8'},{emoji:'⬆️',text:'尊敬語：抬高對方',color:'#c8e8d4',border:'#88c8a0'},{emoji:'⬇️',text:'謙讓語：壓低自己',color:'#e8c8d4',border:'#c888a0'},{emoji:'✅',text:'上下關係決定用語',color:'#e8e8c8',border:'#c8c888'}],formula:'👔 ⬆️尊敬=抬高對方 ⬇️謙讓=壓低自己'},
+blindspot:{cn:'中文「您」就夠了',jp:'日文動詞本身要換成不同的字'},
+words:[
+{id:'kg01',sentence:'先生はもう帰られました。',chinese:'老師已經回去了。（尊敬）',quizType:'keigo',quizQ:'「老師回去了」→ 尊敬語？',quizAnswer:'帰られました',distractors:['帰りました','参りました'],hint:'⬆️ 對老師用尊敬語',blocks:['先生は','もう','帰られました'],formula:'帰る→帰られる(尊敬)'},
+{id:'kg02',sentence:'社長がいらっしゃいます。',chinese:'社長在。（尊敬）',quizType:'keigo',quizQ:'「社長在」→ 尊敬語？',quizAnswer:'いらっしゃいます',distractors:['います','おります'],hint:'⬆️ いる→いらっしゃる(尊敬)',blocks:['社長が','いらっしゃいます'],formula:'いる→いらっしゃる(尊敬)'},
+{id:'kg03',sentence:'私が参ります。',chinese:'我來。（謙讓）',quizType:'keigo',quizQ:'「我來/去」→ 謙讓語？',quizAnswer:'参ります',distractors:['行きます','いらっしゃいます'],hint:'⬇️ 行く→参る(謙讓)',blocks:['私が','参ります'],formula:'行く→参る(謙讓)'},
+{id:'kg04',sentence:'先生が召し上がります。',chinese:'老師吃。（尊敬）',quizType:'keigo',quizQ:'「老師吃」→ 尊敬語？',quizAnswer:'召し上がります',distractors:['食べます','いただきます'],hint:'⬆️ 食べる→召し上がる(尊敬)',blocks:['先生が','召し上がります'],formula:'食べる→召し上がる(尊敬)'},
+{id:'kg05',sentence:'私がいただきます。',chinese:'我吃。（謙讓）',quizType:'keigo',quizQ:'「我吃」→ 謙讓語？',quizAnswer:'いただきます',distractors:['食べます','召し上がります'],hint:'⬇️ 食べる→いただく(謙讓)',blocks:['私が','いただきます'],formula:'食べる→いただく(謙讓)'}
 ]}
 ];
 
@@ -310,6 +413,30 @@ function renderContent(){
       h+='<div style="text-align:center;font-size:0.85rem;font-weight:700;margin:8px 0;">'+w.quizQ+'</div>';
       h+='<div style="text-align:center;font-size:0.8rem;color:var(--dim);">'+w.chinese+'</div>';
       h+='<div style="text-align:center;font-size:0.72rem;color:var(--gold);margin:8px 0;">🧪 い形容詞怎麼變？</div>';
+      h+='<div class="quiz-row">'+opts.map(o=>{let cl='quiz-opt';if(ans){if(o===w.quizAnswer)cl+=' correct';else if(o===ans)cl+=' wrong';}return '<button class="'+cl+'" onclick="handleQuiz(\''+w.id+'\',\''+o+'\',\''+w.quizAnswer+'\')"'+(ans?' disabled':'')+'>'+o+' '+S(o)+'</button>';}).join('')+'</div>';
+    }else if(w.quizType==='teform'){
+      const opts=shuffle([w.quizAnswer,...w.distractors]);
+      h+='<div style="text-align:center;font-size:0.85rem;font-weight:700;margin:8px 0;">'+w.quizQ+'</div>';
+      h+='<div style="text-align:center;font-size:0.8rem;color:var(--dim);">'+w.chinese+'</div>';
+      h+='<div style="text-align:center;font-size:0.72rem;color:var(--gold);margin:8px 0;">🧪 て形怎麼變？</div>';
+      h+='<div class="quiz-row">'+opts.map(o=>{let cl='quiz-opt';if(ans){if(o===w.quizAnswer)cl+=' correct';else if(o===ans)cl+=' wrong';}return '<button class="'+cl+'" onclick="handleQuiz(\''+w.id+'\',\''+o+'\',\''+w.quizAnswer+'\')"'+(ans?' disabled':'')+'>'+o+' '+S(o)+'</button>';}).join('')+'</div>';
+    }else if(w.quizType==='conjugation'){
+      const opts=shuffle([w.quizAnswer,...w.distractors]);
+      h+='<div style="text-align:center;font-size:0.85rem;font-weight:700;margin:8px 0;">'+w.quizQ+'</div>';
+      h+='<div style="text-align:center;font-size:0.8rem;color:var(--dim);">'+w.chinese+'</div>';
+      h+='<div style="text-align:center;font-size:0.72rem;color:var(--gold);margin:8px 0;">🧪 動詞怎麼變形？</div>';
+      h+='<div class="quiz-row">'+opts.map(o=>{let cl='quiz-opt';if(ans){if(o===w.quizAnswer)cl+=' correct';else if(o===ans)cl+=' wrong';}return '<button class="'+cl+'" onclick="handleQuiz(\''+w.id+'\',\''+o+'\',\''+w.quizAnswer+'\')"'+(ans?' disabled':'')+'>'+o+' '+S(o)+'</button>';}).join('')+'</div>';
+    }else if(w.quizType==='bunpou'){
+      const opts=shuffle([w.quizAnswer,...w.distractors]);
+      h+='<div style="text-align:center;font-size:0.85rem;font-weight:700;margin:8px 0;">'+w.quizQ+'</div>';
+      h+='<div style="text-align:center;font-size:0.8rem;color:var(--dim);">'+w.chinese+'</div>';
+      h+='<div style="text-align:center;font-size:0.72rem;color:var(--gold);margin:8px 0;">🧪 選正確的文型</div>';
+      h+='<div class="quiz-row">'+opts.map(o=>{let cl='quiz-opt';if(ans){if(o===w.quizAnswer)cl+=' correct';else if(o===ans)cl+=' wrong';}return '<button class="'+cl+'" onclick="handleQuiz(\''+w.id+'\',\''+o+'\',\''+w.quizAnswer+'\')"'+(ans?' disabled':'')+'>'+o+'</button>';}).join('')+'</div>';
+    }else if(w.quizType==='keigo'){
+      const opts=shuffle([w.quizAnswer,...w.distractors]);
+      h+='<div style="text-align:center;font-size:0.85rem;font-weight:700;margin:8px 0;">'+w.quizQ+'</div>';
+      h+='<div style="text-align:center;font-size:0.8rem;color:var(--dim);">'+w.chinese+'</div>';
+      h+='<div style="text-align:center;font-size:0.72rem;color:var(--gold);margin:8px 0;">🧪 選正確的敬語</div>';
       h+='<div class="quiz-row">'+opts.map(o=>{let cl='quiz-opt';if(ans){if(o===w.quizAnswer)cl+=' correct';else if(o===ans)cl+=' wrong';}return '<button class="'+cl+'" onclick="handleQuiz(\''+w.id+'\',\''+o+'\',\''+w.quizAnswer+'\')"'+(ans?' disabled':'')+'>'+o+' '+S(o)+'</button>';}).join('')+'</div>';
     }else if(w.quizType==='quote'){
       const opts=shuffle([w.quizAnswer,...w.distractors]);
